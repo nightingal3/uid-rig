@@ -1,64 +1,221 @@
 #-*- coding: utf-8 -*-
+import csv
+import decimal
+import math
+import sys
+
 import matplotlib
 matplotlib.use("Agg")
 import pandas as pd
-import math
-import sys
-from routines.find import *
 import matplotlib.pyplot as plt
 import itertools
 import pickle
-import csv
 import random
-import decimal
 import scipy.stats
+from num2words import num2words
+from prettytable import PrettyTable
 
+from routines.find import *
+from routines.plotting import * 
+from config import numberline, font_sizes, need_probs, terms, attested_order, alternate_order
 
 def generate_attested_and_alternate(filename):
 	#given a file containing terms in a range, generate the attested and reverse and return in same format as read_file
 	#here because of the implementation I chose which doesn't entirely make sense now...oh well
-	f = open(filename, "r")
-	number = []
+        f = open(filename, "r")
+        number = []
         attested_opt = []
-	alternate_opt =  []
+        alternate_opt =  []
 
-	for line in f.readlines()[1:]:
-		split_line = line.split(",")
-		number.append(int(split_line[0]))
-		attested = split_line[1].strip("\r\n").split("-")
-		reverse = split_line[1].strip("\r\n").split("-")[::-1]
-		attested_opt.append(attested)
-		alternate_opt.append(reverse)
-
-	return number, attested_opt, alternate_opt
-
-
-
-def read_file(filename, num_opts):
-	f = open(filename, "r")
-	number = []
-	langs = []
-	for i in range(num_opts):
-                langs.append([])
-
-	for line in f.readlines():
-		split_line = line.split("\t")
-		number.append(int(split_line[0]))
-		
-                for j in range(len(langs)):
-                        if j == len(langs) - 1:
-                                langs[j].append(split_line[j + 1][:-2].split("-")) 
-                        else:
-                                langs[j].append(split_line[j + 1].split("-"))
-                                
-
-	f.close()
-	return number, langs
-
-def shuffle_test_2(times, df, need_prob, langname, maxval, real_11_19_mean, real_21_29_mean, **opts):
-        alt_name = langname + "_alt"
-        num_greater = 0 #only doing 21-29 for now since that's where a difference is expected
+        for line in f.readlines()[1:]:
+                split_line = line.split(",")
+                number.append(int(split_line[0]))
+                attested = split_line[1].strip("\r\n").split("-")
+                reverse = split_line[1].strip("\r\n").split("-")[::-1]
+                attested_opt.append(attested)
+                alternate_opt.append(reverse)
         
+        return number, attested_opt, alternate_opt
+        
+def calc_info_trajectory(df, need_prob, langname, maxval, shuffle, log_base, **opts):
+    if shuffle == True:
+        random.shuffle(need_prob)
+
+                
+    terms_dict = pd.Series(df.Number.values, index=df.Reading).to_dict()
+    #~~~~Special language spelling handling~~~~
+    irregulars = get_irregular_prefixes(langname)
+    terms_dict.update(irregulars)        
+
+    inv_dict = {val: key for key, val in terms_dict.items()}
+    alt_dict = {"-".join(key.split("-")[::-1]): val for key, val in terms_dict.items()}
+       
+    if langname[:3] == "eng":
+        alt_dict["teen-eight"] = 18
+        #teen_endings = ["-thir", "-fif", "-eigh"]
+        #for key in irregulars:
+            #for teen in teen_endings:
+                #hund_teen = key + teen
+                #terms_dict[hund_teen] = terms_dict[key + teen + "-teen"]
+    elif langname == "spa":
+        alt_dict["uno-y"] = 1
+        alt_dict["dos-y"] = 2
+        alt_dict["tres-y"] = 3
+        alt_dict["cuatro-y"] = 4
+        alt_dict["cinco-y"] = 5
+        alt_dict["seis-y"] = 6
+        alt_dict["siete-y"] = 7
+        alt_dict["ocho-y"] = 8
+        alt_dict["nueve-y"] = 9
+    elif langname == "fre":
+        alt_dict["un-et"] = 1
+        alt_dict["onze-et"] = 11
+        alt_dict["vingts"] = 20
+
+    inv_alt_dict = {val: key for key, val in alt_dict.items()}
+    entropies = [val * math.log(1/float(val), log_base) for val in need_prob] 
+    info_traj_dict = {}
+    alt_first = False
+
+    for name, opt in opts.items():
+        if name[-3:] == "alt":
+            curr_tmp = terms_dict
+            terms_dict = alt_dict
+            inv_tmp = inv_dict
+            inv_dict = inv_alt_dict
+            alt_first = True
+
+        elif alt_first:
+            terms_dict = curr_tmp
+            inv_dict = inv_tmp
+			
+	
+        info_traj_dict[name] = {}
+
+        for i in range(len(numberline)):
+            curr_num = numberline[i]
+            phrase = opt[i]
+            selected_vals = []
+            base_surprisal = math.log(1/need_prob[curr_num - 1], log_base)
+            surprisal_seq = [base_surprisal]
+            print(phrase)
+            if len(phrase) == 1:
+                continue
+            for j in range(len(phrase)):
+                curr = ''
+                if j > 0:
+                    if phrase[j] == "ty":
+                        curr = phrase[j - 1] + phrase[j]
+
+                    elif phrase[j - 1] == "ty":
+                        curr = phrase[j - 2] + phrase[j - 1] + "-" + phrase[j]
+                    else:
+                        curr = phrase[0]
+                        for i in range(1, j + 1):
+                            curr += "-" + phrase[i] 
+				
+                else:
+                    curr = phrase[0]
+                    selected_vals = [i for i in range(1, maxval)]
+
+
+                surprisal, selected_vals = calc_conditional_probability_reconst_cost(curr, curr_num, len(phrase), need_prob, terms_dict, inv_dict, langname, selected_vals, log_base)
+                surprisal_seq.append(surprisal)
+                                
+            info_traj_dict[name][curr_num] = surprisal_seq
+
+    UID_dev = {}
+    for name, opt in opts.items():
+        UID_dev[name] = {}		
+    for opt in info_traj_dict:
+        for traj in info_traj_dict[opt]:
+            UID_dev[opt][traj] = calc_UID_deviation(info_traj_dict[opt][traj], len(inv_dict[traj].split("-")))
+
+    return info_traj_dict, UID_dev
+
+def get_irregular_prefixes(langname):
+    irregulars = {}
+    if langname[:3] == "eng":
+        irregulars.update({"twen": 2, "thir": 3, "fif": 5, "eigh": 8, "teen": 10, "eleven": 11, "twelve": 12})
+        if langname == "eng_1000":
+            irregulars.update({"onehundred-and": 100, "twohundred-and": 200, "threehundred-and": 300, "fourhundred-and": 400, "fivehundred-and": 500, "sixhundred-and": 600, "sevenhundred-and": 700, "eighthundred-and": 800, "ninehundred-and": 900})
+    elif langname == "ger":
+        irregulars.update({"sech": 6, "sieb": 7, "einund": 1, "zweiund": 2, "dreiund": 3, "vierund": 4, "funfund": 5, "sechsund": 6, "siebenund": 7, "achtund": 8, "neunund": 9})
+    elif langname == "spa":
+        irregulars.update({"dieci": 10, "treinta-y": 30, "cuarenta-y": 40, "cincuenta-y": 50, "sesenta-y": 60, "setenta-y": 70, "ochenta-y": 80, "noventa-y": 90})
+    elif langname == "ita":
+        irregulars.update({"un": 1, "do": 2, "quattor": 4, "quin": 5, "se": 6, "dicia": 10,  "dici": 10, "vent": 20, "trent": 30, "quarant": 40, "cinquant": 50, "sessant": 60, "settant": 70, "ottant": 80, "novant": 90})
+    elif langname == "fre":
+        irregulars.update({"vingt-et": 20, "trente-et": 30, "quarante-et": 40, "cinquante-et": 50, "soixante-et": 60})
+
+    return irregulars 
+
+def get_irregular_suffixes(langname):
+    irregulars = []
+    if langname[:3] == "eng":
+                irregulars = ["twen", "thir", "fif"]
+    elif langname == "ger":
+            irregulars = ["zehn", "zwanzig", "dreisig", "vierzig", "funfzig", "sechzig", "siebzig", "achtzig", "neunzig"] #not technically irregular, only needed because I treated something like "einund" as one unit
+    elif langname == "spa":
+            irregulars = ["uno-y", "dos-y", "treinta-y", "cuatro-y", "cuarenta-y", "cinco-y", "cincuenta-y", "seis-y", "sesenta-y", "siete-y", "setenta-y", "ocho-y", "ochenta-y", "nueve-y", "noventa-y"]
+    elif langname == "ita":
+            irregulars = ["do", "quattor", "quin", "dici", "dicia"]
+    elif langname == "fre":
+            irregulars = ["vingt-et", "trente-et", "quarante-et", "cinquante-et", "soixante-et", "onze-et"]
+    return irregulars
+
+def calc_conditional_probability_reconst_cost(word, target, target_len, need_prob, num_dict, inv_num_dict, langname, numberline, log_base):
+    if word[-4:] == "-and":
+            raw_word = word[:-4]
+            word_val = num_dict[raw_word]
+
+    elif (len(word.split('-')) > 1 and word.split('-')[1] == "vingts") and inv_num_dict[18].split("-")[0] == "huit": #un-vingts, deux-vingts are technically meaningless (formatting issue)
+            word_val = None
+    else:
+            word_val = num_dict[word]
+                
+    selected_vals = []
+    irregulars = get_irregular_suffixes(langname)
+                
+    for num in numberline:
+        minlen = len(word)
+        minmatch = word[:minlen] == inv_num_dict[num][:minlen]
+        if len(word.split('-')) == target_len:
+            if word_val == num:
+                selected_vals.append(num)
+
+        else:
+            if (word_val == num and word not in irregulars) or (len(str(num)) > 1 and minmatch):
+                if word == "teen" and num == 10:
+                    continue
+                if word[-4:] == "-and" and inv_num_dict[num] == raw_word:
+                    continue
+                elif (inv_num_dict[num] in irregulars and len(word.split('-')) > 1) and langname == "ger":
+                    continue
+                elif (num % 10 == 0 and word in irregulars) and langname == "spa":
+                    continue
+                elif (num == 10 and word == "dicia") and langname == "ita":
+                    continue
+                elif (num == 60 and len(word.split("-")) > 1) and langname == "fre":
+                    continue
+                selected_vals.append(num)
+    need_prob = [val for i, val in enumerate(need_prob) if i + 1 in selected_vals]
+    if sum(need_prob) == 0:
+        print("Error: word '%s' does not refer to any number. Ensure all input words are correct." % word)
+        sys.exit(1)
+
+    P_target = need_prob[find(selected_vals, target)[0]]
+    P_all = sum(need_prob)
+
+    return math.log(float(P_all) / float(P_target), log_base), selected_vals
+
+def shuffle_test_2(times, df, need_prob, langname, maxval, real_11_19_mean, real_21_29_mean, hist, **opts):
+        """hist_or_box: 1 for hist, 0 for box"""
+         
+        alt_name = langname + "_alt"
+        num_greater_21_29 = 0 #only this is expected to be statistically significant
+       	num_greater_11_19 = 0
+ 
         mean_teens = []
         mean_teens_alt = []
         mean_twenties = []
@@ -67,39 +224,41 @@ def shuffle_test_2(times, df, need_prob, langname, maxval, real_11_19_mean, real
         diff_mean_twenties = []
         
         
-        for i in range(times):
-                H_traj_dict, UID_dev = calc_info_trajectory(df, need_prob, langname, maxval, True, **opts)
-                teens = []
-                teens_alt = []
-                twenties = []
-                twenties_alt = []
-                for key in range(11, 20):
-                        if len(H_traj_dict[langname][key]) == 0 or len(H_traj_dict[alt_name][key]) == 0:
-                                continue
-                        teens.extend(H_traj_dict[langname][key])
-                        teens_alt.extend(H_traj_dict[alt_name][key])
-                for key in range(21, 30):
-                        if len(H_traj_dict[langname][key]) == 0 or len(H_traj_dict[alt_name][key]) == 0:
-                                continue
-                        twenties.extend(H_traj_dict[langname][key])
-                        twenties_alt.extend(H_traj_dict[alt_name][key])
+        for _ in range(times):
+            info_traj_dict, UID_dev = calc_info_trajectory(df, need_prob, langname, maxval, True, 2, **opts)
+            teens = []
+            teens_alt = []
+            twenties = []
+            twenties_alt = []
+            for key in range(11, 20):
+                if len(info_traj_dict[langname][key]) == 0 or len(info_traj_dict[alt_name][key]) == 0:
+                    continue
+                teens.extend(info_traj_dict[langname][key])
+                teens_alt.extend(info_traj_dict[alt_name][key])
+            for key in range(21, 30):
+                if len(info_traj_dict[langname][key]) == 0 or len(info_traj_dict[alt_name][key]) == 0:
+                    continue
+                twenties.extend(info_traj_dict[langname][key])
+                twenties_alt.extend(info_traj_dict[alt_name][key])
                         
-                avg_teens = float(sum(teens))/len(teens)
-                avg_teens_alt = float(sum(teens_alt))/len(teens_alt)
-                avg_twenties = float(sum(teens))/len(teens)
-                avg_twenties_alt = float(sum(teens_alt))/len(teens_alt)
-                mean_teens.append(avg_teens)
-                mean_teens_alt.append(avg_teens_alt)
-                mean_twenties.append(avg_twenties)
-                mean_twenties_alt.append(avg_twenties_alt)
+            avg_teens = float(sum(teens))/len(teens)
+            avg_teens_alt = float(sum(teens_alt))/len(teens_alt)
+            avg_twenties = float(sum(teens))/len(teens)
+            avg_twenties_alt = float(sum(teens_alt))/len(teens_alt)
+            mean_teens.append(avg_teens)
+            mean_teens_alt.append(avg_teens_alt)
+            mean_twenties.append(avg_twenties)
+            mean_twenties_alt.append(avg_twenties_alt)
 
-                diff_teens = avg_teens_alt - avg_teens
-                diff_twenties = avg_twenties_alt - avg_twenties
-                diff_mean_teens.append(diff_teens)
-                diff_mean_twenties.append(diff_twenties)
-
-                if diff_twenties >= real_21_29_mean:
-                        num_greater += 1
+            diff_teens = avg_teens_alt - avg_teens
+            diff_twenties = avg_twenties_alt - avg_twenties
+            diff_mean_teens.append(diff_teens)
+            diff_mean_twenties.append(diff_twenties)
+		
+            if diff_twenties >= real_21_29_mean:
+                num_greater_21_29 += 1
+            if diff_teens >= real_11_19_mean:
+                num_greater_11_19 += 1
 
         mean_11_19 = sum(mean_teens)/len(mean_teens)
         mean_11_19_alt = sum(mean_teens_alt)/len(mean_teens_alt)
@@ -113,21 +272,40 @@ def shuffle_test_2(times, df, need_prob, langname, maxval, real_11_19_mean, real
         print("Mean (11-19), attested: %f\nMean (11-19), alternate: %f\nMean (21-29), attested: %f\nMean (21-29), alternate: %f\n" % (mean_11_19, mean_11_19_alt, mean_21_29, mean_21_29_alt))
         print("Difference between 11-19 and 21-29: %.15f\n" %(avg_diff_mean_twenties - avg_diff_mean_teens))
         print("Average difference in mean (21-29): %.15f\n" % (avg_diff_mean_twenties))
-        print("p-value (%d trials): %.15f\n" % (times, float(num_greater)/times))
+        print("p-value 21-29 range (%d trials): %.15f\n" % (times, float(num_greater_21_29)/times))
+        print("p-value 11-19 range (%d trials): %.15f\n" % (times, float(num_greater_11_19)/times))
 
-
-        plt.hist(diff_mean_twenties, bins=np.arange(min(diff_mean_twenties), max(diff_mean_twenties) + 0.1, 0.1))
-        plt.title("Difference (alternate - attested) in the 21-29 group, %d trials" % (times))
-        plt.xlabel("Mean difference")
-        plt.ylabel("Number of occurrences")
-        plt.savefig("meandiff_twenties.png")
-
-        return avg_diff_mean_teens_avg_diff_mean_twenties
+        plt.subplot(2, 1, 1)
+        plt.subplots_adjust(hspace=1)
+        if hist:
+                plt.hist(diff_mean_teens, bins=np.arange(min(diff_mean_teens), max(diff_mean_teens) + 0.25, 0.25))
+        else:
+                plt.boxplot(diff_mean_teens, vert=False, showfliers=False)
+        plt.yticks([])
+        plt.axvline(x=real_11_19_mean, linestyle="-.", color="red")
+        plt.xticks(fontsize=font_sizes["MEDIUM_SIZE"])
+        plt.xlabel("Mean difference in alternate and attested cumulative surprisal in range", fontsize=font_sizes["SMALL_SIZE"])
+        plt.title("Range 11-19", fontsize=font_sizes["BIG_SIZE"])
         
-
-
+        plt.subplot(2, 1, 2)
+        plt.subplots_adjust(hspace=1)
+        plt.yticks([])
+        if hist:
+                plt.hist(diff_mean_twenties, bins=np.arange(min(diff_mean_twenties), max(diff_mean_twenties) + 0.2, 0.2))
+        else:
+                plt.boxplot(diff_mean_teens, vert=False, showfliers=False)
+        plt.yticks([])
+        plt.axvline(x=real_21_29_mean, linestyle="-.", color="red")
+        plt.xticks(fontsize=font_sizes["MEDIUM_SIZE"])
+        plt.title("Range 21-29", fontsize=font_sizes["BIG_SIZE"])
+        plt.xlabel("Mean difference in alternate and attested cumulative surprisal in range", fontsize=font_sizes["SMALL_SIZE"])
+        plt.savefig("meandiff_new.png", fontsize=font_sizes["MEDIUM_SIZE"])
+        plt.gcf().clear()
+        
+        return avg_diff_mean_teens, avg_diff_mean_twenties
+        
 def shuffle_test(times, df, need_prob, langname, maxval, **opts):
-        
+        """Depreciated"""
         teens_info = {}
         teens_info_alt = {}
         twenties_info = {}
@@ -149,8 +327,8 @@ def shuffle_test(times, df, need_prob, langname, maxval, **opts):
         
         
         for i in range(times):
-                H_traj_dict, UID_dev = calc_info_trajectory(df, need_prob, langname, maxval, True, **opts)
-                for opt in H_traj_dict:
+                info_traj_dict, UID_dev = calc_info_trajectory(df, need_prob, langname, maxval, True, **opts)
+                for opt in info_traj_dict:
                         if opt[-3:] == "alt":
                                 append_teens = teens_info_alt
                                 append_teens_alt = teens_info
@@ -162,12 +340,12 @@ def shuffle_test(times, df, need_prob, langname, maxval, **opts):
                                 append_twenties = twenties_info
                                 append_twenties_alt = twenties_info_alt
                                 
-                        for key in H_traj_dict[opt]:
+                        for key in info_traj_dict[opt]:
                                 if key > 10 and key < 20:
-                                        append_teens[key].append(sum(H_traj_dict[opt][key]))
+                                        append_teens[key].append(sum(info_traj_dict[opt][key]))
                                         #teens_uid[key].append(UID_dev[key])
                                 elif key > 20 and key < 30:
-                                        append_twenties[key].append(sum(H_traj_dict[opt][key]))
+                                        append_twenties[key].append(sum(info_traj_dict[opt][key]))
                                         #twenties_uid[key].append(UID_dev[[opt]key])
         
         diff_info_teens = {}
@@ -209,271 +387,31 @@ def shuffle_test(times, df, need_prob, langname, maxval, **opts):
        
         return avg_diff_teens_2, sd_teens, avg_diff_twenties_2, sd_twenties
 
-
-
+def calc_UID_deviation(info_traj, phrase_len): 
+    print(info_traj)
+    print(phrase_len)
+    total = 0
+    if phrase_len == 1:
+        return 0
         
-def calc_info_trajectory(df, need_prob, langname, maxval, shuffle, **opts):
-        if shuffle == True:
-                random.shuffle(need_prob)
-
-                
-	curr_dict = pd.Series(df.Number.values, index=df.Reading).to_dict()
-        irregulars = {}	
-        #~~~~Special language spelling handling~~~~
-	if langname[:3] == "eng":
-                curr_dict.update({"twen": 2, "thir": 3, "fif": 5, "eigh": 8, "teen": 10, "eleven": 11, "twelve": 12})
-                separator = None
-                if langname == "eng_1000":
-                        irregulars = {"onehundred-and": 100, "twohundred-and": 200, "threehundred-and": 300, "fourhundred-and": 400, "fivehundred-and": 500, "sixhundred-and": 600, "sevenhundred-and": 700, "eighthundred-and": 800, "ninehundred-and": 900}
-                        curr_dict.update(irregulars)
-        elif langname == "ger":
-                curr_dict.update({"sech": 6, "sieb": 7, "einund": 1, "zweiund": 2, "dreiund": 3, "vierund": 4, "funfund": 5, "sechsund": 6, "siebenund": 7, "achtund": 8, "neunund": 9})
-                separator = None
-        elif langname == "spa":
-                curr_dict.update({"dieci": 10, "treinta-y": 30, "cuarenta-y": 40, "cincuenta-y": 50, "sesenta-y": 60, "setenta-y": 70, "ochenta-y": 80, "noventa-y": 90})
-                separator = "y"
-        elif langname == "ita":
-                curr_dict.update({"un": 1, "do": 2, "quattor": 4, "quin": 5, "se": 6, "dicia": 10,  "dici": 10, "vent": 20, "trent": 30, "quarant": 40, "cinquant": 50, "sessant": 60, "settant": 70, "ottant": 80, "novant": 90})
-        elif langname == "fre":
-                curr_dict.update({"vingt-et": 20, "trente-et": 30, "quarante-et": 40, "cinquante-et": 50, "soixante-et": 60})
-        
-	inv_dict = {val: key for key, val in curr_dict.items() if key not in irregulars}
-	alt_dict = {"-".join(key.split("-")[::-1]): val for key, val in curr_dict.items()}
-
-	if langname[:3] == "eng":
-                #del alt_dict["teen-eigh"]
-                alt_dict["teen-eight"] = 18
-                teen_endings = ["-thir", "-fif", "-eigh"]
-                for key in irregulars:
-                        for teen in teen_endings:
-                                hund_teen = key + teen
-                                curr_dict[hund_teen] = curr_dict[key + teen + "-teen"]
+    for i in range(1, phrase_len + 1):
+        total += abs(float(info_traj[i - 1] - info_traj[i])/info_traj[0] - (1/float(phrase_len)))
                         
-
-        if langname == "spa":
-                alt_dict["uno-y"] = 1
-                alt_dict["dos-y"] = 2
-                alt_dict["tres-y"] = 3
-                alt_dict["cuatro-y"] = 4
-                alt_dict["cinco-y"] = 5
-                alt_dict["seis-y"] = 6
-                alt_dict["siete-y"] = 7
-                alt_dict["ocho-y"] = 8
-                alt_dict["nueve-y"] = 9
-        if langname == "fre":
-                alt_dict["un-et"] = 1
-                alt_dict["onze-et"] = 11
-                alt_dict["vingts"] = 20
-                
-       
-	inv_alt_dict = {val: key for key, val in alt_dict.items()}
-	entropies = [val * math.log(1/float(val), 2) for val in need_prob] 
-	H_traj_dict = {}
-	alt_first = False
-
-	
-
-	for name, opt in opts.items():
-                if name[-3:] == "alt":
-                        curr_tmp = curr_dict
-			curr_dict = alt_dict
-			inv_tmp = inv_dict
-			inv_dict = inv_alt_dict
-			alt_first = True
-
-		elif alt_first:
-                        curr_dict = curr_tmp
-                        inv_dict = inv_tmp
-			
-	
-		H_traj_dict[name] = {}
-
-		for i in range(len(number)):
-			curr_num = number[i]
-			phrase = opt[i]
-			selected_vals = []
-			base_H = math.log(1/need_prob[curr_num - 1], 2)
-			H_seq = [base_H]
-			
-			if len(phrase) == 1:
-                                continue
-			for j in range(len(phrase)):
-				curr = ''
-				if j > 0:
-					if phrase[j] == "ty":
-						curr = phrase[j - 1] + phrase[j]
-
-					elif phrase[j - 1] == "ty":
-                                                curr = phrase[j - 2] + phrase[j - 1] + "-" + phrase[j]
-					else:
-                                                curr = phrase[0]
-                                                for i in range(1, j + 1):
-                                                        curr += "-" + phrase[i] 
-						#curr = phrase[j - 1] + '-' + phrase[j]
-				
-				else:
-					curr = phrase[0]
-					selected_vals = [i for i in range(1, maxval)]
-
-
-				H, selected_vals = calc_conditional_probability_reconst_cost(curr, curr_num, len(phrase), need_prob, curr_dict, inv_dict, langname, selected_vals)
-				H_seq.append(H)
-                                
-
-                        H_traj_dict[name][curr_num] = H_seq
-
-        UID_dev = {}
-	for name, opt in opts.items():
-		UID_dev[name] = {}		
-        for opt in H_traj_dict:
-		for traj in H_traj_dict[opt]:
-                	UID_dev[opt][traj] = calc_UID_deviation(H_traj_dict[opt][traj], len(inv_dict[traj].split("-")))
-
-	return H_traj_dict, UID_dev
-
-def calc_conditional_probability_reconst_cost(word, target, target_len, need_prob, num_dict, inv_num_dict, langname, numberline):
-        if word[-4:] == "-and":
-                raw_word = word[:-4]
-                word_val = num_dict[raw_word]
-
-        elif (len(word.split('-')) > 1 and word.split('-')[1] == "vingts") and inv_num_dict[18].split("-")[0] == "huit": #un-vingts, deux-vingts are technically meaningless (formatting issue)
-                word_val = None
-        else:
-                word_val = num_dict[word]
-                
-	selected_vals = []
-	irregulars = []
-	if langname[:3] == "eng":
-                irregulars = ["twen", "thir", "fif"]
-        elif langname == "ger":
-                irregulars = ["zehn", "zwanzig", "dreisig", "vierzig", "funfzig", "sechzig", "siebzig", "achtzig", "neunzig"] #not technically irregular, only needed because I treated something like "einund" as one unit
-        elif langname == "spa":
-                irregulars = ["uno-y", "dos-y", "treinta-y", "cuatro-y", "cuarenta-y", "cinco-y", "cincuenta-y", "seis-y", "sesenta-y", "siete-y", "setenta-y", "ocho-y", "ochenta-y", "nueve-y", "noventa-y"]
-        elif langname == "ita":
-                irregulars = ["do", "quattor", "quin", "dici", "dicia"]
-        elif langname == "fre":
-                irregulars = ["vingt-et", "trente-et", "quarante-et", "cinquante-et", "soixante-et", "onze-et"]
-                
-	for num in numberline:
-                minlen = len(word)
-                minmatch = word[:minlen] == inv_num_dict[num][:minlen]
-                if len(word.split('-')) == target_len:
-                        if word_val == num:
-                                selected_vals.append(num)
-
-                else:
-                        if (word_val == num and word not in irregulars) or (len(str(num)) > 1 and minmatch):
-                                if word == "teen" and num == 10:
-                                        continue
-                                if word[-4:] == "-and" and inv_num_dict[num] == raw_word:
-                                        continue
-                                elif (inv_num_dict[num] in irregulars and len(word.split('-')) > 1) and langname == "ger":
-                                        continue
-                                elif (num % 10 == 0 and word in irregulars) and langname == "spa":
-                                        continue
-                                elif (num == 10 and word == "dicia") and langname == "ita":
-                                        continue
-                                elif (num == 60 and len(word.split("-")) > 1) and langname == "fre":
-                                        continue
-                                selected_vals.append(num)
-	need_prob = [val for i, val in enumerate(need_prob) if i + 1 in selected_vals]
-	if sum(need_prob) == 0:
-		print("Error: word '%s' does not refer to any number. Ensure all input words are correct." % word)
-		sys.exit(1);
-
-	P_target = need_prob[find(selected_vals, target)[0]]
-	P_all = sum(need_prob)
-
-        return math.log(float(P_all) / float(P_target), 2), selected_vals
-        
-	
-def calc_conditional_entropy(word, need_prob, num_dict, inv_num_dict, numberline):
-	"""Depreciated"""
-	word_val = num_dict[word]
-	selected_vals = []
-	irregulars = ["twen", "thir", "fif", "eigh"]
-	for num in numberline:
-		if (word_val == num and word not in irregulars) or (len(str(num)) > 1 and word == inv_num_dict[num][:len(word)]):
-			selected_vals.append(num)
-        need_prob = [val for i, val in enumerate(need_prob) if i + 1 in selected_vals]
-	
-	if sum(need_prob) == 0:
-		print("Error: word '%s' does not refer to any number. Ensure all input words are correct." % word)
-		sys.exit(1);
-	entropies = [(need_prob[i]/sum(need_prob)) * math.log(1/float(need_prob[i]/sum(need_prob)), 2) for i, val in enumerate(selected_vals)]
-
-	return sum(entropies), selected_vals
-
-
-def calc_UID_deviation(H_traj, phrase_len): 
-	total = 0
-	if phrase_len == 1:
-                return 0
-        
-	for i in range(1, phrase_len + 1):
-                        total += abs(float(H_traj[i - 1] - H_traj[i])/H_traj[0] - (1/float(phrase_len)))
-                        
-	if phrase_len > 2:
-                total *= float(phrase_len)/(2 * (phrase_len - 1)) 
+    if phrase_len > 2:
+        total *= float(phrase_len)/(2 * (phrase_len - 1)) 
 		
-	return total
+    return total
 
-
-def calc_UTC(**H_traj):
-	#UTC stands for Uncertainty over Time Cost
-        #now called RAG (rapid information gain)
-	area = {}
-	for name, opt in H_traj.items():
-		area[name] = {}
-		for traj in H_traj[name]:
-                        area[name][traj] = 0
-                        for i in range(len(H_traj[name][traj])):
-                                area[name][traj] += H_traj[name][traj][i]
+def calc_cumulative_surprisal(**info_traj):
+    area = {}
+    for name, _ in info_traj.items():
+        area[name] = {}
+        for traj in info_traj[name]:
+            area[name][traj] = 0
+            for i in range(len(info_traj[name][traj])):
+                area[name][traj] += info_traj[name][traj][i]
 		
-	return area			
-
-
-
-def plot_area(area_dict, langname, maxval):
-	for key in area_dict:
-                if key[-4:] == "_alt":
-                        first = key
-                else:
-                        second = key
-
-        points_alt_x = []
-        points_alt_y = []
-	for num in area_dict[first]:
-                if num > maxval:
-                        break
-                points_alt_x.append(num)
-                points_alt_y.append(area_dict[first][num])
-        if langname == "Universal":
-                plt.bar(points_alt_x, points_alt_y, color="green", label="base-atom", alpha=0.5)
-        else:
-                plt.bar(points_alt_x, points_alt_y, color="green", label=first, alpha=0.5)
-
-        
-        points_x = []
-        points_y = []
-	for num in area_dict[second]:
-                if num > maxval:
-                        break
-                points_x.append(num)
-                points_y.append(area_dict[second][num])
-        if langname == "Universal":
-                plt.bar(points_x, points_y, color="red", label="atom-base", alpha=0.5)
-        else:
-                plt.bar(points_x, points_y, color="red", label=second, alpha=0.5)
-
-        plt.xlabel("Number")
-        plt.xticks([i for i in range(10, maxval, maxval / 10)])
-        plt.ylabel("Surprisal (bits)")
-        plt.legend()
-        plt.title("Rapid Information Gain (" + langname + ")")
-        plt.savefig("Area_" + langname + ".png")
-        plt.gcf().clear()
-
+    return area			
 
 def normalize_freq(freqs, upper_lim):
 	total = 0
@@ -488,162 +426,114 @@ def normalize_freq(freqs, upper_lim):
 
 	return new
 
+def tabulate_metric_accuracy(dict, langname):
+    langname_alt = langname + "_alt"
+    num_correct_in_range = {}
+    num_total_in_range = {}
+    for num in range(11, 99):
+        if num % 10 == 0:
+            continue
+        if num not in dict[langname] or num not in dict[langname_alt]:
+            continue
+        if dict[langname_alt][num] > dict[langname][num]:
+            if math.floor(num / 10) * 10 not in num_correct_in_range:
+                num_correct_in_range[math.floor(num / 10) * 10] = 1
+            else:
+                num_correct_in_range[math.floor(num / 10) * 10] += 1
+        if math.floor(num / 10) * 10 not in num_total_in_range:
+            num_total_in_range[math.floor(num / 10) * 10] = 1
+        else:
+            num_total_in_range[math.floor(num / 10) * 10] += 1
+    print("correct ", num_correct_in_range)
+    print("total ", num_total_in_range)
+    return num_correct_in_range, num_total_in_range
 
-def plot_avg_bars(dict1, dict2, lang, plt=True):
-	costs_1 = {}
-	costs_2 = {}
-	for i in range(10, 100, 10):
-		costs_1[i] = []
-		costs_2[i] = []
-
-	for num in dict1:
-		costs_1[(num / 10) * 10].append(dict1[num])
-		costs_2[(num / 10) * 10].append(dict2[num])
-
-	final_1 = []
-	mse_1 = []
-	final_2 = []
-	mse_2 = []
-	for num in sorted(costs_1):
-		total = 0
-		for cost in costs_1[num]:
-			total += cost
-		avg = float(total) / float(len(costs_1[num]))
-		final_1.append(avg)
-		mse_1.append(scipy.stats.sem(costs_1[num]))
-
-
-		total = 0
-		for cost in costs_2[num]:
-			total += cost
-		avg = float(total) / float(len(costs_2[num]))
-		final_2.append(avg)
-		mse_2.append(scipy.stats.sem(costs_2[num]))
-       
-	if plt:
-                plt.gcf().clear()
-                plt.title("Cumulative surprisal (range of 10)", fontsize="x-large")
-                plt.bar([num for num in sorted(costs_1.keys())], final_1, yerr=mse_1, width=3, color="red", alpha=0.75, label="Attested")
-                plt.bar([num + 3 for num in sorted(costs_2.keys())], final_2, yerr=mse_2, width=3, color="green", alpha=0.75, label="Alternate")
-                plt.legend(fontsize="x-large")
-                plt.xlabel("Number", fontsize="x-large")
-                plt.ylabel("Surprisal (bits)", fontsize="x-large")
-                plt.savefig("test.png")
-
-	return final_1[10], mse_1, final_2[10], mse_2
-
-
-def plot_mini(H_trajs, langname, color1="blue", color2="orange"):
-        alt = langname + "_alt"
-        langname_proper = {"mand": "Mandarin","eng_1000": "English", "eng": "English", "fre": "French", "ger": "German", "ita": "Italian", "spa": "Spanish", "uni": "Universal"}
-        for num in H_trajs[langname]:
-                if num % 10 == 0:
-                        continue
-               	title = str(num) + " (" + langname_proper[langname] + ")"
-                plt.title(title, fontsize="x-large")
-                length = len(H_trajs[langname][num])
-                numberline = [i for i in range(length)]
-                plt.plot(numberline, H_trajs[langname][num], color=color1, label="Attested") #attested
-                plt.plot(numberline, H_trajs[alt][num], color=color2, label="Alternate") #alternate
-                uid_traj = [H_trajs[langname][num][0]]
-
-                frac = H_trajs[langname][num][0] / (length - 1)
-                for i in range(1, length - 1):
-                    uid_traj.append(H_trajs[langname][num][0] - i * frac)
-                uid_traj.append(0)
+def tabulate_surprisal_below_UID(info_trajs, langname):
+    langname_alt = langname + "_alt"
+    attested_below_UID = {}
+    alternate_below_UID = {}
+    for num in range(11, 99):
+            if num % 10 == 0:
+                    continue
+            if num not in info_trajs[langname] or num not in info_trajs[langname_alt]:
+                    continue
+            num_range = math.floor(num / 10) * 10
+            surprisal_midpoint = info_trajs[langname][num][0] * 0.5
+            if info_trajs[langname][num][1] < surprisal_midpoint:
+                    if num_range in attested_below_UID:
+                            attested_below_UID[num_range] += 1
+                    else:
+                            attested_below_UID[num_range] = 1
+            if info_trajs[langname_alt][num][1] < surprisal_midpoint:
+                    if num_range in alternate_below_UID:
+                            alternate_below_UID[num_range] += 1
+                    else:
+                            alternate_below_UID[num_range] = 1
+    return attested_below_UID, alternate_below_UID
                 
-		plt.plot(numberline, uid_traj, color="red", label="UID")
-                name = "uid/" + langname + "/" + str(num) + ".png"
-                plt.xlabel("Number of words", fontsize="x-large")
-                plt.xticks(numberline)
-                plt.ylabel("Surprisal (bits)", fontsize="x-large")
-                plt.legend(fontsize="x-large")
-                plt.savefig(name)
-                plt.gcf().clear()
+def print_accuracy_in_range(correct_dict, total_dict):
+    ranges = sorted(correct_dict.keys())
+    accuracies = []
+    for num_range in correct_dict:
+        accuracies.append(float(correct_dict[num_range])/total_dict[num_range])
+    print("accuracies ", accuracies)
+    table = PrettyTable(["Theory"] + ranges)
+    table.add_row(["Number correct"] + accuracies)
+    print(table)
 
-                
 	
 if __name__ == "__main__":
+    langnames = dict(
+        English = "eng",
+        English_1000 = "eng_1000",
+        French = "fre", 
+        German = "ger",
+        Italian = "ita",
+        Mandarin = "mand",
+        Spanish = "spa", 
+        Template = "uni"
+    )
+    ### Settings ###
 
-	#number, eng_words_1000, eng_mod_1000 = generate_attested_and_alternate("data/terms_1_to_100/english_1000.csv")		
-	number, lang_opts = read_file("atom_base.csv", 12)
-	eng_words, eng_mod, mand_words, mand_mod, ger_words, ger_mod, spanish_words, spanish_mod, french_words, french_mod, italian_words, italian_mod = lang_opts
-	
-	f_np = open("data/need_probs/eng_num_pos.csv", "r")
-	f_np_1000 = open("data/need_probs/eng_1_to_1000.csv", "r")
-	f_np_all = open("data/need_probs/total_need_prob_num.csv", "rb")
-	f_np_mnd = open("data/need_probs/chinese_need_prob.csv", "r")
-	f_np_ger = open("data/need_probs/german_need_prob.csv", "r")
-	f_np_spa = open("data/need_probs/spanish_need_prob.csv", "r")
-	f_np_ita = open("data/need_probs/italian_num_pos.csv", "r")
-	f_np_fre = open("data/need_probs/french_need_prob.csv", "r")
+    selected_lang = "Template" # Change language here
+    selected_langname = langnames[selected_lang] 
+    want_shuffle_test = 0 # Whether or not to perform a shuffle/permutation test
+    num_iterations_shuffle_test = 100000 # Number of trials for shuffle/permutation test
+    want_hist = 0 # Whether to plot a histogram(0) or box-plot(1) for shuffle/permutation test
+    tabulate_accuracy = 1 # Whether or not to print accuracy metrics for UID/RIG
 
+    ###
 
-	f_num = pd.read_csv("data/terms_1_to_100/english.csv")
-	f_num_mand = pd.read_csv("data/terms_1_to_100/chinese_romanized.csv")
-	number_words = f_num["Reading"].values.tolist()
-	number_words_mand = f_num["Reading"].values.tolist()
-	
-	df_m = pd.read_csv("data/terms_1_to_100/chinese_romanized.csv")
-	df = pd.read_csv("data/terms_1_to_100/english.csv")
-	df_g = pd.read_csv("data/terms_1_to_100/german_segmented.csv")
-	df_s = pd.read_csv("data/terms_1_to_100/spanish_romanized.csv")
-	df_i = pd.read_csv("data/terms_1_to_100/italian_romanized.csv")
-	df_f = pd.read_csv("data/terms_1_to_100/french.csv")
-	df_1000 = pd.read_csv("data/terms_1_to_100/english_1000.csv")
+    selected_langname_alt = selected_langname + "_alt"
 
- 	need_probs = [float(i) for i in f_np.read().split("\r\n")[:-1]]
-	need_probs_1000 = [float(i) for i in f_np_1000.read().split("\r\n")[:-1]]
-	need_probs_mnd = [float(i) for i in f_np_mnd.read().split("\r\n")[:-1]]
-	need_probs_ger = [float(i) for i in f_np_ger.read().split("\r\n")[:-1]]
-	need_probs_spa = [float(i) for i in f_np_spa.read().split("\r\n")[:-1]]
-	need_probs_ita = [float(i) for i in f_np_ita.read().split("\r\n")[:-1]]
-	need_probs_fre = [float(i) for i in f_np_fre.read().split("\r\n")[:-1]]
-	need_probs_all = [float(i) for i in f_np_all.read().split("\r\n")[:-1]]
+    selected_need_probs = need_probs[selected_langname]
 
-		
-	
-	H_trajs, UID_dev = calc_info_trajectory(df_m, need_probs_all, "mand", 100, False, mand_alt=mand_mod, mand=mand_words)
-	H_cumulative = {}
-	for num in H_trajs["mand"]:
-                H_trajs["mand"][num] =  sum(H_trajs["mand"][num]) #change it to the cumulative
-        for num in H_trajs["mand_alt"]:
-                H_trajs["mand_alt"][num] =  sum(H_trajs["mand_alt"][num]) #change it to the cumulative
+    selected_terms = terms[selected_langname]
+
+    selected_attested_order = attested_order[selected_langname]
+
+    selected_alternate_order = alternate_order[selected_langname]
+   
+    info_trajs, UID_dev = calc_info_trajectory(selected_terms, selected_need_probs, selected_langname, 100, False, 2, uni_alt=selected_alternate_order, uni=selected_attested_order)
                 
-        #print(H_trajs["eng"])
-        #print(H_trajs["eng_alt"])
-        
-        #print(plot_avg_bars(H_trajs["mand"], H_trajs["mand_alt"], "mand", plt=False))
-        
-        shuffle_test_2(100000, df_m, need_probs_all, "mand", 100, 0.00476, 1.74, mand_alt=mand_mod, mand=mand_words)
-	
-	
-	assert False
-	area = calc_UTC(eng_1000_alt=H_trajs["eng_1000_alt"], eng_1000=H_trajs["eng_1000"])
-	plot_area(area, "English", 1000)
-	mand_reg = UID_dev["eng_1000"]
-	mand_alt = UID_dev["eng_1000_alt"]
+    area = calc_cumulative_surprisal(uni_alt=info_trajs[selected_langname_alt], uni=info_trajs[selected_langname])
+    
+    UID_dict = UID_dev[selected_langname]
+    UID_dict_alt = UID_dev[selected_langname_alt]
 
 
-        plot_mini(H_trajs, "eng_1000")
-	
-        
-	lists = sorted(mand_reg.items())
-	lists = [item for item in lists if item[0] % 10 != 0]
-	lists1 = sorted(mand_alt.items())
-	lists1 = [item for item in lists1 if item[0] % 10 != 0]
-	
-	x, y = zip(*lists)
-	x1, y1 = zip(*lists1)
-	
-	plt.bar(x1, y1, color="green", label="English alternate", alpha=0.5)
-	plt.bar(x, y, color="red", label="English attested", alpha=0.5)
-	
-	plt.xlabel("Number")
-	#plt.xlim(10,100)
-	plt.ylabel("UID deviation score")
-	plt.legend()
-	plt.title("UID deviation")
-	plt.savefig("eng1000_num_UID_dev.png")
-	plt.gcf().clear()
-	print("DONE!!!!!")
+    plot_mini(info_trajs, selected_langname, ext=".png")
+    plot_area(area, selected_lang, 100)
+    plot_uid(UID_dict, UID_dict_alt, selected_langname)
+
+    if selected_langname == "uni" and want_shuffle_test:
+        # Just because I didn't calculate the empirical differences (11-19) and (21-29) for all languages
+        shuffle_test_2(num_iterations_shuffle_test, selected_terms, selected_need_probs, selected_langname, 100, 0.00476, 1.74, hist=want_hist, uni_alt=selected_alternate_order, uni=selected_attested_order)
+
+    if tabulate_accuracy:
+        UID_corr, UID_total = tabulate_metric_accuracy(UID_dev, selected_langname)
+        RIG_corr, RIG_total = tabulate_metric_accuracy(area, selected_langname)
+        print_accuracy_in_range(UID_corr, UID_total)
+        print_accuracy_in_range(RIG_corr, RIG_total)
+
+    print("DONE!!!!!")
