@@ -1,0 +1,102 @@
+Number,Reading,Meaning
+0,z¨¦ro,0
+1,un,1
+2,deux,2
+3,trois,3
+4,quatre,4
+5,cinq,5
+6,six,6
+7,sept,7
+8,huit,8
+9,neuf,9
+10,dix,10
+11,onze,11
+12,douze,12
+13,treize,13
+14,quatorze,14
+15,quinze,15
+16,seize,16
+17,dix-sept,10 + 7
+18,dix-huit,10 + 8
+19,dix-neuf,10 + 9
+20,vingt,20
+21,vingt-et-un,20 and 1
+22,vingt-deux,20 + 2
+23,vingt-trois,20 + 3
+24,vingt-quatre,20 + 4
+25,vingt-cinq,20 + 5
+26,vingt-six,20 + 6
+27,vingt-sept,20 + 7
+28,vingt-huit,20 + 8
+29,vingt-neuf,20 + 9
+30,trente,30
+31,trente-et-un,30 and 1
+32,trente-deux,30 + 2
+33,trente-trois,30 + 3
+34,trente-quatre,30 + 4
+35,trente-cinq,30 + 5
+36,trente-six,30 + 6
+37,trente-sept,30 + 7
+38,trente-huit,30 + 8
+39,trente-neuf,30 + 9
+40,quarante,40
+41,quarante-et-un,40 and 1
+42,quarante-deux,40 + 2
+43,quarante-trois,40 + 3
+44,quarante-quatre,40 + 4
+45,quarante-cinq,40 + 5
+46,quarante-six,40 + 6
+47,quarante-sept,40 + 7
+48,quarante-huit,40 + 8
+49,quarante-neuf,40 + 9
+50,cinquante,50
+51,cinquante-et-un,50 and 1
+52,cinquante-deux,50 + 2
+53,cinquante-trois,50 + 3
+54,cinquante-quatre,50 + 4
+55,cinquante-cinq,50 + 5
+56,cinquante-six,50 + 6
+57,cinquante-sept,50 + 7
+58,cinquante-huit,50 + 8
+59,cinquante-neuf,50 + 9
+60,soixante,60
+61,soixante-et-un,60 and 1
+62,soixante-deux,60 + 2
+63,soixante-trois,60 + 3
+64,soixante-quatre,60 + 4
+65,soixante-cinq,60 + 5
+66,soixante-six,60 + 6
+67,soixante-sept,60 + 7
+68,soixante-huit,60 + 8
+69,soixante-neuf,60 + 9
+70,soixante-dix,60 + 10
+71,soixante-et-onze,60 and 11
+72,soixante-douze,60 + 12
+73,soixante-treize,60 + 13
+74,soixante-quatorze,60 + 14
+75,soixante-quinze,60 + 15
+76,soixante-seize,60 + 16
+77,soixante-dix-sept,60 + 10 + 7
+78,soixante-dix-huit,60 + 10 + 8
+79,soixante-dix-neuf,60 + 10 + 9
+80,quatrevingts,4 ?? 20s
+81,quatrevingts-un,4 ?? 20 + 1
+82,quatrevingts-deux,4 ?? 20 + 2
+83,quatrevingts-trois,4 ?? 20 + 3
+84,quatrevingts-quatre,4 ?? 20 + 4
+85,quatrevingts-cinq,4 ?? 20 + 5
+86,quatrevingts-six,4 ?? 20 + 6
+87,quatrevingts-sept,4 ?? 20 + 7
+88,quatrevingts-huit,4 ?? 20 + 8
+89,quatrevingts-neuf,4 ?? 20 + 9
+90,quatrevingts-dix,4 ?? 20 + 10
+91,quatrevingts-onze,4 ?? 20 + 11
+92,quatrevingts-douze,4 ?? 20 + 12
+93,quatrevingts-treize,4 ?? 20 + 13
+94,quatrevingts-quatorze,4 ?? 20 + 14
+95,quatrevingts-quinze,4 ?? 20 + 15
+96,quatrevingts-seize,4 ?? 20 + 16
+97,quatrevingts-dix-sept,4 ?? 20 + 10 + 7
+98,quatrevingts-dix-huit,4 ?? 20 + 10 + 8
+99,quatrevingts-dix-neuf,4 ?? 20 + 10 + 9
+100,cent,100

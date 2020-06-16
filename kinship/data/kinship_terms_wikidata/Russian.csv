@@ -1,0 +1,127 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,мать
+1,http://www.wikidata.org/entity/Q7565,отец
+2,http://www.wikidata.org/entity/Q7566,родитель
+3,http://www.wikidata.org/entity/Q31184,сиблинг
+4,http://www.wikidata.org/entity/Q76477,племянник/племянница
+5,http://www.wikidata.org/entity/Q76507,тётка
+6,http://www.wikidata.org/entity/Q76557,дядя
+7,http://www.wikidata.org/entity/Q76666,кузен/кузина
+8,http://www.wikidata.org/entity/Q159979,близнец
+9,http://www.wikidata.org/entity/Q167918,дедушка или бабушка
+10,http://www.wikidata.org/entity/Q170393,внебрачный ребёнок
+11,http://www.wikidata.org/entity/Q177232,сын
+12,http://www.wikidata.org/entity/Q183905,потомок
+13,http://www.wikidata.org/entity/Q223973,крёстный родитель
+14,http://www.wikidata.org/entity/Q239526,отпрыск
+15,http://www.wikidata.org/entity/Q308194,дочь
+16,http://www.wikidata.org/entity/Q402152,предок
+17,http://www.wikidata.org/entity/Q595094,сестра
+18,http://www.wikidata.org/entity/Q1502246,биологический родитель
+19,http://www.wikidata.org/entity/Q1642895,род
+20,http://www.wikidata.org/entity/Q2500619,прадедедушка или прабабушка
+21,http://www.wikidata.org/entity/Q2500620,прабабушка
+22,http://www.wikidata.org/entity/Q2500621,прадедушка
+23,http://www.wikidata.org/entity/Q2914212,брат мужа или жены
+24,http://www.wikidata.org/entity/Q2920422,неполнородная сестра
+25,http://www.wikidata.org/entity/Q3238556,сестра мужа или жены
+26,http://www.wikidata.org/entity/Q3403377,племянница
+27,http://www.wikidata.org/entity/Q3603531,внук или внучка
+28,http://www.wikidata.org/entity/Q3752578,зять
+29,http://www.wikidata.org/entity/Q3813877,двоюродный дедушка
+30,http://www.wikidata.org/entity/Q3972282,старший брат
+31,http://www.wikidata.org/entity/Q4113829,внучатая двоюродная племянница
+32,http://www.wikidata.org/entity/Q4113830,внучатая племянница
+33,http://www.wikidata.org/entity/Q4113832,внучатый племянник
+34,http://www.wikidata.org/entity/Q4120409,уй
+35,http://www.wikidata.org/entity/Q5992509,стрыя
+36,http://www.wikidata.org/entity/Q6035384,вуйна
+37,http://www.wikidata.org/entity/Q9235758,бабушка
+38,http://www.wikidata.org/entity/Q9238344,дед
+39,http://www.wikidata.org/entity/Q10082670,старшая сестра
+40,http://www.wikidata.org/entity/Q10291472,младший брат
+41,http://www.wikidata.org/entity/Q10861465,брат
+42,http://www.wikidata.org/entity/Q10885666,старший брат отца
+43,http://www.wikidata.org/entity/Q10912818,младший брат отца
+44,http://www.wikidata.org/entity/Q10943095,младшая сестра
+45,http://www.wikidata.org/entity/Q11275656,троюродный брат/сестра
+46,http://www.wikidata.org/entity/Q11666901,номинальное родство
+47,http://www.wikidata.org/entity/Q11921506,внук
+48,http://www.wikidata.org/entity/Q11972456,двоюродная бабушка
+49,http://www.wikidata.org/entity/Q12051531,кузина
+50,http://www.wikidata.org/entity/Q12158205,дядя по отцу
+51,http://www.wikidata.org/entity/Q12160962,тесть
+52,http://www.wikidata.org/entity/Q15224724,племянник
+53,http://www.wikidata.org/entity/Q15312935,неполнородный брат
+54,http://www.wikidata.org/entity/Q18489480,сноха
+55,http://www.wikidata.org/entity/Q19595226,единокровный брат
+56,http://www.wikidata.org/entity/Q19595227,единоутробный брат
+57,http://www.wikidata.org/entity/Q19595228,единокровная сестра
+58,http://www.wikidata.org/entity/Q19595229,единоутробная сестра
+59,http://www.wikidata.org/entity/Q19671714,прямой потомок
+60,http://www.wikidata.org/entity/Q19682162,дед по отцу
+61,http://www.wikidata.org/entity/Q19682170,правнук
+62,http://www.wikidata.org/entity/Q19682171,пра-прадедушка по отцовской линии
+63,http://www.wikidata.org/entity/Q19682183,праправнук
+64,http://www.wikidata.org/entity/Q19682184,пра-прадедушка по отцовской линии
+65,http://www.wikidata.org/entity/Q19756330,внучка
+66,http://www.wikidata.org/entity/Q19901267,внучатые племянники/племянницы
+67,http://www.wikidata.org/entity/Q19901270,двоюродная бабушка/дедушка
+68,http://www.wikidata.org/entity/Q19901274,двоюродный дядя/тётя
+69,http://www.wikidata.org/entity/Q19901611,двоюродный племянник/племянница
+70,http://www.wikidata.org/entity/Q20746725,приёмный сын
+71,http://www.wikidata.org/entity/Q20746742,приёмный родитель
+72,http://www.wikidata.org/entity/Q20747487,правнучка
+73,http://www.wikidata.org/entity/Q20776692,дед по матери
+74,http://www.wikidata.org/entity/Q20776714,бабушка по отцу
+75,http://www.wikidata.org/entity/Q20776741,бабушка по матери
+76,http://www.wikidata.org/entity/Q20827872,пра-правнук/внучка
+77,http://www.wikidata.org/entity/Q20827882,пра-пра-пра-прародители
+78,http://www.wikidata.org/entity/Q21073936,дядя/тётя
+79,http://www.wikidata.org/entity/Q21152551,вероятный отец
+80,http://www.wikidata.org/entity/Q21152552,вероятная дочь
+81,http://www.wikidata.org/entity/Q21173186,вероятный сын
+82,http://www.wikidata.org/entity/Q22970285,вероятная мать
+83,http://www.wikidata.org/entity/Q23009870,двоюродный/троюродный сиблинг
+84,http://www.wikidata.org/entity/Q23045211,братыч
+85,http://www.wikidata.org/entity/Q23045234,сестрыч
+86,http://www.wikidata.org/entity/Q23045278,братанна
+87,http://www.wikidata.org/entity/Q23045293,сестрина
+88,http://www.wikidata.org/entity/Q23063441,сводные родственники
+89,http://www.wikidata.org/entity/Q23684609,сын сына
+90,http://www.wikidata.org/entity/Q24027915,возможный супруг
+91,http://www.wikidata.org/entity/Q25858158,приёмный ребёнок
+92,http://www.wikidata.org/entity/Q26237579,правнук/правнучка
+93,http://www.wikidata.org/entity/Q26262236,возможный ребёнок
+94,http://www.wikidata.org/entity/Q26262238,вероятный родитель
+95,http://www.wikidata.org/entity/Q27164515,пра-прародитель
+96,http://www.wikidata.org/entity/Q27965041,неполнородный брат/неполнородная сестра
+97,http://www.wikidata.org/entity/Q27965080,неполнородный брат/неполнородная сестра по отцовской линии
+98,http://www.wikidata.org/entity/Q27965083,неполнородный брат/неполнородная сестра по материнской линии
+99,http://www.wikidata.org/entity/Q28017469,ребёнок брата
+100,http://www.wikidata.org/entity/Q28017470,ребёнок сестры
+101,http://www.wikidata.org/entity/Q28017564,дядя/тётя по матери
+102,http://www.wikidata.org/entity/Q28017566,дядя/тётя по отцу
+103,http://www.wikidata.org/entity/Q28017613,дедушка/бабушка по отцу
+104,http://www.wikidata.org/entity/Q28017614,дедушка/бабушка по матери
+105,http://www.wikidata.org/entity/Q28017737,крёстный отец
+106,http://www.wikidata.org/entity/Q28017739,крёстная мать
+107,http://www.wikidata.org/entity/Q28466210,младший сиблинг
+108,http://www.wikidata.org/entity/Q28466211,старший сиблинг
+109,http://www.wikidata.org/entity/Q38693655,сын или дочь
+110,http://www.wikidata.org/entity/Q41798817,крестник
+111,http://www.wikidata.org/entity/Q41798832,крестница
+112,http://www.wikidata.org/entity/Q41805469,дядя
+113,http://www.wikidata.org/entity/Q41805477,тётя
+114,http://www.wikidata.org/entity/Q41805519,кузен
+115,http://www.wikidata.org/entity/Q42297295,праправнучка
+116,http://www.wikidata.org/entity/Q42301620,кузен по матери
+117,http://www.wikidata.org/entity/Q42301631,кузен по отцу
+118,http://www.wikidata.org/entity/Q42302285,дочь сына
+119,http://www.wikidata.org/entity/Q42302425,сын дочери
+120,http://www.wikidata.org/entity/Q53277248,пра-пра-правнук
+121,http://www.wikidata.org/entity/Q53705034,биологический ребёнок
+122,http://www.wikidata.org/entity/Q58837291,прапрадедушка
+123,http://www.wikidata.org/entity/Q58896332,брат бабушки
+124,http://www.wikidata.org/entity/Q61740757,приёмный отец
+125,http://www.wikidata.org/entity/Q61740758,приёмная мать

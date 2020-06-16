@@ -1,0 +1,17 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,mither
+1,http://www.wikidata.org/entity/Q7565,faither
+2,http://www.wikidata.org/entity/Q7566,parent
+3,http://www.wikidata.org/entity/Q31184,siblin
+4,http://www.wikidata.org/entity/Q76507,aunt
+5,http://www.wikidata.org/entity/Q76557,uncle
+6,http://www.wikidata.org/entity/Q76666,cousin
+7,http://www.wikidata.org/entity/Q159979,twin
+8,http://www.wikidata.org/entity/Q167918,grandparent
+9,http://www.wikidata.org/entity/Q177232,son
+10,http://www.wikidata.org/entity/Q308194,dochter
+11,http://www.wikidata.org/entity/Q595094,sister
+12,http://www.wikidata.org/entity/Q3752578,son-in-law
+13,http://www.wikidata.org/entity/Q10861465,brither
+14,http://www.wikidata.org/entity/Q19682162,paternal grandfaither
+15,http://www.wikidata.org/entity/Q20776714,paternal grandmither

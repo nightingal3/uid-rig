@@ -1,0 +1,127 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,madre
+1,http://www.wikidata.org/entity/Q7565,padre
+2,http://www.wikidata.org/entity/Q7566,parental
+3,http://www.wikidata.org/entity/Q31184,hermano o hermana
+4,http://www.wikidata.org/entity/Q76477,sobrino o sobrina
+5,http://www.wikidata.org/entity/Q76507,tía
+6,http://www.wikidata.org/entity/Q76557,tío
+7,http://www.wikidata.org/entity/Q76666,primo hermano
+8,http://www.wikidata.org/entity/Q159979,gemelos
+9,http://www.wikidata.org/entity/Q167918,abuelo o abuela
+10,http://www.wikidata.org/entity/Q170393,hijo ilegítimo
+11,http://www.wikidata.org/entity/Q177232,hijo
+12,http://www.wikidata.org/entity/Q183905,descendiente
+13,http://www.wikidata.org/entity/Q223973,padrino o madrina
+14,http://www.wikidata.org/entity/Q239526,descendencia
+15,http://www.wikidata.org/entity/Q308194,hija
+16,http://www.wikidata.org/entity/Q402152,ancestro
+17,http://www.wikidata.org/entity/Q595094,hermana
+18,http://www.wikidata.org/entity/Q1502246,progenitor
+19,http://www.wikidata.org/entity/Q1642895,linaje
+20,http://www.wikidata.org/entity/Q1767348,parentesco civil
+21,http://www.wikidata.org/entity/Q2329919,top ancestor
+22,http://www.wikidata.org/entity/Q2348338,ancestro político
+23,http://www.wikidata.org/entity/Q2500619,bisabuelos
+24,http://www.wikidata.org/entity/Q2500620,bisabuela
+25,http://www.wikidata.org/entity/Q2500621,bisabuelo
+26,http://www.wikidata.org/entity/Q2914212,cuñado
+27,http://www.wikidata.org/entity/Q2920422,medio hermana
+28,http://www.wikidata.org/entity/Q3238556,cuñada
+29,http://www.wikidata.org/entity/Q3403377,sobrina
+30,http://www.wikidata.org/entity/Q3603531,nieto o nieta
+31,http://www.wikidata.org/entity/Q3744857,ahijado o ahijada
+32,http://www.wikidata.org/entity/Q3752578,yerno
+33,http://www.wikidata.org/entity/Q3813877,tío abuelo
+34,http://www.wikidata.org/entity/Q3972282,hermano mayor
+35,http://www.wikidata.org/entity/Q4113830,sobrina nieta
+36,http://www.wikidata.org/entity/Q4113832,sobrino nieto
+37,http://www.wikidata.org/entity/Q4120409,tío materno
+38,http://www.wikidata.org/entity/Q5992509,tía paterna
+39,http://www.wikidata.org/entity/Q6035384,tía materna
+40,http://www.wikidata.org/entity/Q7375049,bastardo real
+41,http://www.wikidata.org/entity/Q9235758,abuela
+42,http://www.wikidata.org/entity/Q9238344,abuelo
+43,http://www.wikidata.org/entity/Q10082670,hermana mayor
+44,http://www.wikidata.org/entity/Q10291472,hermano menor
+45,http://www.wikidata.org/entity/Q10861465,hermano
+46,http://www.wikidata.org/entity/Q10885666,hermano mayor del padre
+47,http://www.wikidata.org/entity/Q10912818,hermano menor del padre
+48,http://www.wikidata.org/entity/Q10943095,hermana menor
+49,http://www.wikidata.org/entity/Q11275656,primo segundo
+50,http://www.wikidata.org/entity/Q11666901,parentesco nominal
+51,http://www.wikidata.org/entity/Q11921506,nieto
+52,http://www.wikidata.org/entity/Q11972456,tía abuela
+53,http://www.wikidata.org/entity/Q12051531,prima hermana
+54,http://www.wikidata.org/entity/Q12158205,tío paterno
+55,http://www.wikidata.org/entity/Q12160962,suegro
+56,http://www.wikidata.org/entity/Q15224724,sobrino
+57,http://www.wikidata.org/entity/Q15312935,medio hermano
+58,http://www.wikidata.org/entity/Q18489480,nuera
+59,http://www.wikidata.org/entity/Q19595226,hermano por parte de padre
+60,http://www.wikidata.org/entity/Q19595227,hermano por parte de madre
+61,http://www.wikidata.org/entity/Q19595228,hermana por parte de padre
+62,http://www.wikidata.org/entity/Q19595229,hermana por parte de madre
+63,http://www.wikidata.org/entity/Q19671714,descendiente lineal
+64,http://www.wikidata.org/entity/Q19682162,abuelo paterno
+65,http://www.wikidata.org/entity/Q19682170,bisnieto
+66,http://www.wikidata.org/entity/Q19682171,bisabuelo paterno
+67,http://www.wikidata.org/entity/Q19682183,tataranieto
+68,http://www.wikidata.org/entity/Q19682184,tatarabuelo paterno o tatarabuela paterna
+69,http://www.wikidata.org/entity/Q19756330,nieta
+70,http://www.wikidata.org/entity/Q19901267,sobrino nieto o sobrina nieta
+71,http://www.wikidata.org/entity/Q19901270,tío abuelo o tía abuela
+72,http://www.wikidata.org/entity/Q19901274,tío o tía en segundo grado
+73,http://www.wikidata.org/entity/Q19901611,sobrino segundo o sobrina segunda
+74,http://www.wikidata.org/entity/Q20746725,hijo adoptivo
+75,http://www.wikidata.org/entity/Q20746742,padre adoptivo o madre adoptiva
+76,http://www.wikidata.org/entity/Q20747487,bisnieta
+77,http://www.wikidata.org/entity/Q20776692,abuelo materno
+78,http://www.wikidata.org/entity/Q20776714,abuela paterna
+79,http://www.wikidata.org/entity/Q20776741,abuela materna
+80,http://www.wikidata.org/entity/Q20827872,tataranieto o tataranieta
+81,http://www.wikidata.org/entity/Q20827882,tataratatarabuelo
+82,http://www.wikidata.org/entity/Q21073936,tío o tía
+83,http://www.wikidata.org/entity/Q21152551,padre putativo
+84,http://www.wikidata.org/entity/Q21152552,hija putativa
+85,http://www.wikidata.org/entity/Q21173186,hijo putativo
+86,http://www.wikidata.org/entity/Q22970285,madre putativa
+87,http://www.wikidata.org/entity/Q23009870,primo
+88,http://www.wikidata.org/entity/Q23045211,hijo del hermano
+89,http://www.wikidata.org/entity/Q23045234,sobrino sororal
+90,http://www.wikidata.org/entity/Q23045278,sobrina fraternal
+91,http://www.wikidata.org/entity/Q23045293,sobrina sororal
+92,http://www.wikidata.org/entity/Q23684609,hijo del hijo
+93,http://www.wikidata.org/entity/Q24027915,posible cónyuge
+94,http://www.wikidata.org/entity/Q25858158,hijo o hija adoptiva
+95,http://www.wikidata.org/entity/Q26004701,bisabuelo materno
+96,http://www.wikidata.org/entity/Q26181623,tío bisabuelo
+97,http://www.wikidata.org/entity/Q26237579,bisnieto o bisnieta
+98,http://www.wikidata.org/entity/Q26262192,posible hermano o hermana
+99,http://www.wikidata.org/entity/Q26262236,hijo putativo o hija putativa
+100,http://www.wikidata.org/entity/Q26262238,padre putativo
+101,http://www.wikidata.org/entity/Q27164472,tatarabuelo materno o tatarabuela materna
+102,http://www.wikidata.org/entity/Q27164515,tatarabuelo o tatarabuela
+103,http://www.wikidata.org/entity/Q27965041,medio hermano o medio hermana
+104,http://www.wikidata.org/entity/Q27965080,hermano o hermana por parte de padre
+105,http://www.wikidata.org/entity/Q27965083,hermano o hermana por parte de madre
+106,http://www.wikidata.org/entity/Q28017469,sobrino o sobrina fraternal
+107,http://www.wikidata.org/entity/Q28017470,sobrino o sobrina sororal
+108,http://www.wikidata.org/entity/Q28017564,tío o tía materna
+109,http://www.wikidata.org/entity/Q28017566,tío o tía paterna
+110,http://www.wikidata.org/entity/Q28017613,abuelo o abuela paterna
+111,http://www.wikidata.org/entity/Q28017614,abuelo o abuela materna
+112,http://www.wikidata.org/entity/Q28017737,padrino
+113,http://www.wikidata.org/entity/Q28017739,madrina
+114,http://www.wikidata.org/entity/Q28466210,hermano o hermana menor
+115,http://www.wikidata.org/entity/Q28466211,hermano o hermana mayor
+116,http://www.wikidata.org/entity/Q30254751,primo hermano materno
+117,http://www.wikidata.org/entity/Q38693655,hijo o hija
+118,http://www.wikidata.org/entity/Q41798817,ahijado
+119,http://www.wikidata.org/entity/Q41798832,ahijada
+120,http://www.wikidata.org/entity/Q41805469,tío
+121,http://www.wikidata.org/entity/Q41805477,tía
+122,http://www.wikidata.org/entity/Q41805519,primo hermano
+123,http://www.wikidata.org/entity/Q53277248,Chozno
+124,http://www.wikidata.org/entity/Q61740757,padre adoptivo
+125,http://www.wikidata.org/entity/Q61740758,madre adoptiva

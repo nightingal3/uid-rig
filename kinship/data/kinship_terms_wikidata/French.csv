@@ -1,0 +1,128 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,mère
+1,http://www.wikidata.org/entity/Q7565,père
+2,http://www.wikidata.org/entity/Q7566,parent
+3,http://www.wikidata.org/entity/Q31184,frère ou sœur
+4,http://www.wikidata.org/entity/Q76477,neveu ou nièce
+5,http://www.wikidata.org/entity/Q76507,tante
+6,http://www.wikidata.org/entity/Q76557,oncle
+7,http://www.wikidata.org/entity/Q76666,cousin germain
+8,http://www.wikidata.org/entity/Q159979,jumeau
+9,http://www.wikidata.org/entity/Q167918,grand-parent
+10,http://www.wikidata.org/entity/Q170393,enfant naturel
+11,http://www.wikidata.org/entity/Q177232,fils
+12,http://www.wikidata.org/entity/Q183905,descendant
+13,http://www.wikidata.org/entity/Q223973,parrain ou marraine
+14,http://www.wikidata.org/entity/Q239526,progéniture
+15,http://www.wikidata.org/entity/Q308194,fille
+16,http://www.wikidata.org/entity/Q402152,ancêtre
+17,http://www.wikidata.org/entity/Q595094,sœur
+18,http://www.wikidata.org/entity/Q1502246,parent biologique
+19,http://www.wikidata.org/entity/Q1642895,lignage
+20,http://www.wikidata.org/entity/Q1767348,parenté juridique
+21,http://www.wikidata.org/entity/Q2500619,arrière-grand-parent
+22,http://www.wikidata.org/entity/Q2500620,arrière-grand-mère
+23,http://www.wikidata.org/entity/Q2500621,arrière-grand-père
+24,http://www.wikidata.org/entity/Q2914212,beau-frère
+25,http://www.wikidata.org/entity/Q2920422,demi-sœur
+26,http://www.wikidata.org/entity/Q3238556,belle-sœur
+27,http://www.wikidata.org/entity/Q3403377,nièce
+28,http://www.wikidata.org/entity/Q3603531,petit-enfant
+29,http://www.wikidata.org/entity/Q3752578,gendre
+30,http://www.wikidata.org/entity/Q3813877,grand-oncle
+31,http://www.wikidata.org/entity/Q3972282,frère aîné
+32,http://www.wikidata.org/entity/Q4113830,grande-nièce
+33,http://www.wikidata.org/entity/Q4113832,petit-neveu
+34,http://www.wikidata.org/entity/Q4120409,oncle maternel
+35,http://www.wikidata.org/entity/Q5992509,tante paternelle
+36,http://www.wikidata.org/entity/Q6035384,tante maternelle
+37,http://www.wikidata.org/entity/Q7375049,liste de bâtards
+38,http://www.wikidata.org/entity/Q9235758,grand-mère
+39,http://www.wikidata.org/entity/Q9238344,grand-père
+40,http://www.wikidata.org/entity/Q10082670,sœur ainée
+41,http://www.wikidata.org/entity/Q10291472,frère cadet
+42,http://www.wikidata.org/entity/Q10861465,frère
+43,http://www.wikidata.org/entity/Q10885666,frère aîné du père
+44,http://www.wikidata.org/entity/Q10912818,frère cadet du père
+45,http://www.wikidata.org/entity/Q10943095,sœur cadette
+46,http://www.wikidata.org/entity/Q11275656,petit-cousin
+47,http://www.wikidata.org/entity/Q11666901,parenté nominale
+48,http://www.wikidata.org/entity/Q11921506,petit-fils
+49,http://www.wikidata.org/entity/Q11972456,grand-tante
+50,http://www.wikidata.org/entity/Q12051531,cousine germaine
+51,http://www.wikidata.org/entity/Q12158205,oncle paternel
+52,http://www.wikidata.org/entity/Q12160962,beau-père
+53,http://www.wikidata.org/entity/Q15224724,neveu
+54,http://www.wikidata.org/entity/Q15312935,demi-frère
+55,http://www.wikidata.org/entity/Q18489480,belle-fille
+56,http://www.wikidata.org/entity/Q19595226,frère consanguin
+57,http://www.wikidata.org/entity/Q19595227,frère utérin
+58,http://www.wikidata.org/entity/Q19595228,sœur consanguine
+59,http://www.wikidata.org/entity/Q19595229,sœur utérine
+60,http://www.wikidata.org/entity/Q19671714,descendant en ligne directe
+61,http://www.wikidata.org/entity/Q19682162,grand-père paternel
+62,http://www.wikidata.org/entity/Q19682170,arrière-petit-fils
+63,http://www.wikidata.org/entity/Q19682171,arrière-grand-père côté paternel
+64,http://www.wikidata.org/entity/Q19682184,arrière-arrière-grand-père
+65,http://www.wikidata.org/entity/Q19756330,petite-fille
+66,http://www.wikidata.org/entity/Q19901267,grand-neveu ou grande-nièce
+67,http://www.wikidata.org/entity/Q19901270,grand-oncle ou grand-tante
+68,http://www.wikidata.org/entity/Q19901274,petit-oncle et petite-tante
+69,http://www.wikidata.org/entity/Q19901611,petit-neveu et petite-nièce
+70,http://www.wikidata.org/entity/Q20746725,fils adoptif
+71,http://www.wikidata.org/entity/Q20746742,parent adoptif
+72,http://www.wikidata.org/entity/Q20747487,arrière-petite-fille
+73,http://www.wikidata.org/entity/Q20776692,grand-père maternel
+74,http://www.wikidata.org/entity/Q20776714,grand-mère paternelle
+75,http://www.wikidata.org/entity/Q20776741,grand-mère maternelle
+76,http://www.wikidata.org/entity/Q20827872,arrière-arrière-petit-enfant
+77,http://www.wikidata.org/entity/Q20827882,arrière-arrière-arrière-grand-parent
+78,http://www.wikidata.org/entity/Q21073936,oncle ou tante
+79,http://www.wikidata.org/entity/Q21152551,père possible
+80,http://www.wikidata.org/entity/Q21152552,fille putative
+81,http://www.wikidata.org/entity/Q21173186,fils possible
+82,http://www.wikidata.org/entity/Q22970285,mère possible
+83,http://www.wikidata.org/entity/Q23009870,cousin
+84,http://www.wikidata.org/entity/Q23045211,neveu paternel
+85,http://www.wikidata.org/entity/Q23045234,fils de la sœur
+86,http://www.wikidata.org/entity/Q23045278,fille du frère
+87,http://www.wikidata.org/entity/Q23045293,fille de la sœur
+88,http://www.wikidata.org/entity/Q23684609,petit-fils en lignée masculine
+89,http://www.wikidata.org/entity/Q24027915,conjoint possible
+90,http://www.wikidata.org/entity/Q25377643,double cousin
+91,http://www.wikidata.org/entity/Q25858158,enfant adoptif
+92,http://www.wikidata.org/entity/Q26237579,arrière-petit-enfant
+93,http://www.wikidata.org/entity/Q26262192,frère ou sœur possible
+94,http://www.wikidata.org/entity/Q26262236,enfant possible
+95,http://www.wikidata.org/entity/Q26262238,parent possible
+96,http://www.wikidata.org/entity/Q27164472,arrière-arrière-grand-mère
+97,http://www.wikidata.org/entity/Q27164515,arrière-arrière-grand-parent
+98,http://www.wikidata.org/entity/Q27965041,demi-frère ou demi-sœur
+99,http://www.wikidata.org/entity/Q27965080,frère ou soeur consanguin
+100,http://www.wikidata.org/entity/Q27965083,frère ou sœur utérin
+101,http://www.wikidata.org/entity/Q28017566,oncle ou tante paternel(le)
+102,http://www.wikidata.org/entity/Q28017613,grand-parent paternel
+103,http://www.wikidata.org/entity/Q28017614,grand-parent maternel
+104,http://www.wikidata.org/entity/Q28017737,parrain
+105,http://www.wikidata.org/entity/Q28017739,marraine
+106,http://www.wikidata.org/entity/Q28466210,frère ou sœur cadette
+107,http://www.wikidata.org/entity/Q28466211,frère ou sœur ainée
+108,http://www.wikidata.org/entity/Q38693655,fils ou fille
+109,http://www.wikidata.org/entity/Q41798817,filleul
+110,http://www.wikidata.org/entity/Q41798832,filleule
+111,http://www.wikidata.org/entity/Q41805469,oncle
+112,http://www.wikidata.org/entity/Q41805519,cousin germain
+113,http://www.wikidata.org/entity/Q41805708,beau-père
+114,http://www.wikidata.org/entity/Q42297295,arrière-arrière-petite-fille
+115,http://www.wikidata.org/entity/Q42302285,petite-fille
+116,http://www.wikidata.org/entity/Q42302425,petit-fils
+117,http://www.wikidata.org/entity/Q42302432,petite-fille
+118,http://www.wikidata.org/entity/Q53705034,enfant biologique
+119,http://www.wikidata.org/entity/Q57832810,cousin
+120,http://www.wikidata.org/entity/Q57832811,cousine
+121,http://www.wikidata.org/entity/Q59282002,fils ou gendre
+122,http://www.wikidata.org/entity/Q59282004,père ou beau-père
+123,http://www.wikidata.org/entity/Q61740757,père adoptif
+124,http://www.wikidata.org/entity/Q61740758,mère adoptive
+125,http://www.wikidata.org/entity/Q62015576,frère possible
+126,http://www.wikidata.org/entity/Q62015744,sœur possible

@@ -1,0 +1,21 @@
+mother,mor
+father,far
+son,son
+daughter,dotter
+grandmother,mor-mor
+grandfather,mor-far
+grandson,dotter-son
+granddaughter,dotter-dotter
+stepmother,styv-moder
+younger sister,yngre syster
+father's brother,far-bror
+stepson,styv-son
+stepdaughter,styv-dotter
+younger brother,yngre bror
+niece,syster-dotter
+sister,syster
+brother,bror
+mother's sister,moster
+mother's brother,mor-bror
+father's sister,faster
+father's brother,far-bror

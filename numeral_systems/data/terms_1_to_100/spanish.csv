@@ -1,0 +1,102 @@
+﻿Number,Reading,Meaning
+0,cero,0
+1,uno,1
+2,dos,2
+3,tres,3
+4,cuatro,4
+5,cinco,5
+6,seis,6
+7,siete,7
+8,ocho,8
+9,nueve,9
+10,diez,10
+11,once,11
+12,doce,12
+13,trece,13
+14,catorce,14
+15,quince,15
+16,dieciséis,10* and 6*
+17,diecisiete,10* and 7
+18,dieciocho,10* and 8
+19,diecinueve,10* and 9
+20,veinte,20
+21,veintiuno,20* and 1
+22,veintidós,20* and 2*
+23,veintitrés,20* and 3*
+24,veinticuatro,20* and 4
+25,veinticinco,20* and 5
+26,veintiséis,20* and 6*
+27,veintisiete,20* and 7
+28,veintiocho,20* and 8
+29,veintinueve,20* and 9
+30,treinta,30
+31,treinta y uno,30 and 1
+32,treinta y dos,30 and 2
+33,treinta y tres,30 and 3
+34,treinta y cuatro,30 and 4
+35,treinta y cinco,30 and 5
+36,treinta y seis,30 and 6
+37,treinta y siete,30 and 7
+38,treinta y ocho,30 and 8
+39,treinta y nueve,30 and 9
+40,cuarenta,40
+41,cuarenta y uno,40 and 1
+42,cuarenta y dos,40 and 2
+43,cuarenta y tres,40 and 3
+44,cuarenta y cuatro,40 and 4
+45,cuarenta y cinco,40 and 5
+46,cuarenta y seis,40 and 6
+47,cuarenta y siete,40 and 7
+48,cuarenta y ocho,40 and 8
+49,cuarenta y nueve,40 and 9
+50,cincuenta,50
+51,cincuenta y uno,50 and 1
+52,cincuenta y dos,50 and 2
+53,cincuenta y tres,50 and 3
+54,cincuenta y cuatro,50 and 4
+55,cincuenta y cinco,50 and 5
+56,cincuenta y seis,50 and 6
+57,cincuenta y siete,50 and 7
+58,cincuenta y ocho,50 and 8
+59,cincuenta y nueve,50 and 9
+60,sesenta,60
+61,sesenta y uno,60 and 1
+62,sesenta y dos,60 and 2
+63,sesenta y tres,60 and 3
+64,sesenta y cuatro,60 and 4
+65,sesenta y cinco,60 and 5
+66,sesenta y seis,60 and 6
+67,sesenta y siete,60 and 7
+68,sesenta y ocho,60 and 8
+69,sesenta y nueve,60 and 9
+70,setenta,70
+71,setenta y uno,70 and 1
+72,setenta y dos,70 and 2
+73,setenta y tres,70 and 3
+74,setenta y cuatro,70 and 4
+75,setenta y cinco,70 and 5
+76,setenta y seis,70 and 6
+77,setenta y siete,70 and 7
+78,setenta y ocho,70 and 8
+79,setenta y nueve,70 and 9
+80,ochenta,80
+81,ochenta y uno,80 and 1
+82,ochenta y dos,80 and 2
+83,ochenta y tres,80 and 3
+84,ochenta y cuatro,80 and 4
+85,ochenta y cinco,80 and 5
+86,ochenta y seis,80 and 6
+87,ochenta y siete,80 and 7
+88,ochenta y ocho,80 and 8
+89,ochenta y nueve,80 and 9
+90,noventa,90
+91,noventa y uno,90 and 1
+92,noventa y dos,90 and 2
+93,noventa y tres,90 and 3
+94,noventa y cuatro,90 and 4
+95,noventa y cinco,90 and 5
+96,noventa y seis,90 and 6
+97,noventa y siete,90 and 7
+98,noventa y ocho,90 and 8
+99,noventa y nueve,90 and 9
+100,cien,100

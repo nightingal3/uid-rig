@@ -1,0 +1,104 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,Mutter
+1,http://www.wikidata.org/entity/Q7565,Vater
+2,http://www.wikidata.org/entity/Q7566,Elternteil
+3,http://www.wikidata.org/entity/Q31184,Bruder oder Schwester
+4,http://www.wikidata.org/entity/Q76477,Neffe oder Nichte
+5,http://www.wikidata.org/entity/Q76507,Tante
+6,http://www.wikidata.org/entity/Q76557,Onkel
+7,http://www.wikidata.org/entity/Q76666,Cousin
+8,http://www.wikidata.org/entity/Q159979,Zwilling
+9,http://www.wikidata.org/entity/Q167918,Großeltern
+10,http://www.wikidata.org/entity/Q170393,außereheliches Kind
+11,http://www.wikidata.org/entity/Q177232,Sohn
+12,http://www.wikidata.org/entity/Q183905,Abstammung
+13,http://www.wikidata.org/entity/Q223973,Pate
+14,http://www.wikidata.org/entity/Q239526,Nachkomme
+15,http://www.wikidata.org/entity/Q308194,Tochter
+16,http://www.wikidata.org/entity/Q402152,Vorfahr
+17,http://www.wikidata.org/entity/Q595094,Schwester
+18,http://www.wikidata.org/entity/Q1502246,Genitor
+19,http://www.wikidata.org/entity/Q1642895,Lineage
+20,http://www.wikidata.org/entity/Q1767348,juristische Verwandtschaft
+21,http://www.wikidata.org/entity/Q2329919,Stammvater
+22,http://www.wikidata.org/entity/Q2348338,Stiefahn
+23,http://www.wikidata.org/entity/Q2500619,Urgroßeltern
+24,http://www.wikidata.org/entity/Q2500620,Urgroßmutter
+25,http://www.wikidata.org/entity/Q2500621,Urgroßvater
+26,http://www.wikidata.org/entity/Q2914212,Schwager
+27,http://www.wikidata.org/entity/Q2920422,Halbschwester
+28,http://www.wikidata.org/entity/Q3238556,Schwägerin
+29,http://www.wikidata.org/entity/Q3403377,Nichte
+30,http://www.wikidata.org/entity/Q3603531,Enkel
+31,http://www.wikidata.org/entity/Q3744857,Patenkind
+32,http://www.wikidata.org/entity/Q3752578,Schwiegersohn
+33,http://www.wikidata.org/entity/Q3813877,Großonkel
+34,http://www.wikidata.org/entity/Q3972282,älterer Bruder
+35,http://www.wikidata.org/entity/Q4113830,Großnichte
+36,http://www.wikidata.org/entity/Q4113832,Großneffe
+37,http://www.wikidata.org/entity/Q4120409,Mutterbruder
+38,http://www.wikidata.org/entity/Q5992509,Vaterschwester
+39,http://www.wikidata.org/entity/Q6035384,Mutterschwester
+40,http://www.wikidata.org/entity/Q9235758,Großmutter
+41,http://www.wikidata.org/entity/Q9238344,Großvater
+42,http://www.wikidata.org/entity/Q10082670,ältere Schwester
+43,http://www.wikidata.org/entity/Q10291472,jüngerer Bruder
+44,http://www.wikidata.org/entity/Q10861465,Bruder
+45,http://www.wikidata.org/entity/Q10885666,älterer Vaterbruder
+46,http://www.wikidata.org/entity/Q10912818,jüngerer Vaterbruder
+47,http://www.wikidata.org/entity/Q10943095,jüngere Schwester
+48,http://www.wikidata.org/entity/Q11275656,Cousin 2. Grades
+49,http://www.wikidata.org/entity/Q11666901,symbolische Verwandtschaft
+50,http://www.wikidata.org/entity/Q11921506,Enkelsohn
+51,http://www.wikidata.org/entity/Q11972456,Großtante
+52,http://www.wikidata.org/entity/Q12051531,Cousine
+53,http://www.wikidata.org/entity/Q12158205,Vaterbruder
+54,http://www.wikidata.org/entity/Q12160962,Schwiegervater
+55,http://www.wikidata.org/entity/Q15224724,Neffe
+56,http://www.wikidata.org/entity/Q15312935,Halbbruder
+57,http://www.wikidata.org/entity/Q18489480,Schwiegertochter
+58,http://www.wikidata.org/entity/Q19595226,Halbbruder väterlicherseits
+59,http://www.wikidata.org/entity/Q19595227,Halbbruder mütterlicherseits
+60,http://www.wikidata.org/entity/Q19595228,Halbschwester väterlicherseits
+61,http://www.wikidata.org/entity/Q19595229,Halbschwester mütterlicherseits
+62,http://www.wikidata.org/entity/Q19671714,direkter Nachfahre
+63,http://www.wikidata.org/entity/Q19682162,Großvater väterlicherseits
+64,http://www.wikidata.org/entity/Q19682170,Urenkel
+65,http://www.wikidata.org/entity/Q19682183,Ururenkel
+66,http://www.wikidata.org/entity/Q19756330,Enkeltochter
+67,http://www.wikidata.org/entity/Q19901267,Großneffe oder Großnichte
+68,http://www.wikidata.org/entity/Q19901270,Großonkel oder Großtante
+69,http://www.wikidata.org/entity/Q19901274,Onkel zweiten Grades und Tante zweiten Grades
+70,http://www.wikidata.org/entity/Q19901611,Neffe 2. Grades
+71,http://www.wikidata.org/entity/Q20746725,Adoptivsohn
+72,http://www.wikidata.org/entity/Q20746742,Adoptiveltern
+73,http://www.wikidata.org/entity/Q20747487,Urenkelin
+74,http://www.wikidata.org/entity/Q20776692,Großvater mütterlicherseits
+75,http://www.wikidata.org/entity/Q20776714,Großmutter väterlicherseits
+76,http://www.wikidata.org/entity/Q20776741,Großmutter mütterlicherseits
+77,http://www.wikidata.org/entity/Q20827872,Ururenkel
+78,http://www.wikidata.org/entity/Q20827882,Urururgroßeltern
+79,http://www.wikidata.org/entity/Q21073936,Onkel oder Tante
+80,http://www.wikidata.org/entity/Q23009870,Cousin
+81,http://www.wikidata.org/entity/Q25858158,Adoptivkind
+82,http://www.wikidata.org/entity/Q26181623,Urgroßonkel
+83,http://www.wikidata.org/entity/Q26237579,Urenkel
+84,http://www.wikidata.org/entity/Q27164515,Ururgroßeltern
+85,http://www.wikidata.org/entity/Q27965041,Halbgeschwister
+86,http://www.wikidata.org/entity/Q27965080,Halbgeschwister väterlicherseits
+87,http://www.wikidata.org/entity/Q27965083,Halbgeschwister mütterlicherseits
+88,http://www.wikidata.org/entity/Q28017737,Pate
+89,http://www.wikidata.org/entity/Q28017739,Patin
+90,http://www.wikidata.org/entity/Q28466210,jüngeres Geschwister
+91,http://www.wikidata.org/entity/Q28466211,älteres Geschwister
+92,http://www.wikidata.org/entity/Q38693655,Kind
+93,http://www.wikidata.org/entity/Q41798817,Patensohn
+94,http://www.wikidata.org/entity/Q41798832,Patentochter
+95,http://www.wikidata.org/entity/Q41805519,männlicher Cousin 1. Grades
+96,http://www.wikidata.org/entity/Q42297295,Ururenkelin
+97,http://www.wikidata.org/entity/Q53277248,Urururenkel
+98,http://www.wikidata.org/entity/Q57832810,männlicher Cousin
+99,http://www.wikidata.org/entity/Q61386386,Cousin 3. Grades
+100,http://www.wikidata.org/entity/Q61386388,Cousin 4. Grades
+101,http://www.wikidata.org/entity/Q61740757,Adoptivvater
+102,http://www.wikidata.org/entity/Q61740758,Adoptivmutter

@@ -1,0 +1,97 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,moeder
+1,http://www.wikidata.org/entity/Q7565,vader
+2,http://www.wikidata.org/entity/Q7566,ouder
+3,http://www.wikidata.org/entity/Q31184,broer of zus
+4,http://www.wikidata.org/entity/Q76477,neef of nicht
+5,http://www.wikidata.org/entity/Q76507,tante
+6,http://www.wikidata.org/entity/Q76557,oom
+7,http://www.wikidata.org/entity/Q76666,volle neef/nicht
+8,http://www.wikidata.org/entity/Q159979,helft van een tweeling
+9,http://www.wikidata.org/entity/Q167918,grootouder
+10,http://www.wikidata.org/entity/Q170393,buitenechtelijk kind
+11,http://www.wikidata.org/entity/Q177232,zoon
+12,http://www.wikidata.org/entity/Q183905,afstamming
+13,http://www.wikidata.org/entity/Q223973,peetouder
+14,http://www.wikidata.org/entity/Q239526,nageslacht
+15,http://www.wikidata.org/entity/Q308194,dochter
+16,http://www.wikidata.org/entity/Q402152,voorouder
+17,http://www.wikidata.org/entity/Q595094,zus
+18,http://www.wikidata.org/entity/Q1642895,komaf
+19,http://www.wikidata.org/entity/Q2500619,overgrootouder
+20,http://www.wikidata.org/entity/Q2500620,overgrootmoeder
+21,http://www.wikidata.org/entity/Q2500621,overgrootvader
+22,http://www.wikidata.org/entity/Q2914212,schoonbroer
+23,http://www.wikidata.org/entity/Q2920422,halfzus
+24,http://www.wikidata.org/entity/Q3238556,schoonzus
+25,http://www.wikidata.org/entity/Q3403377,nicht
+26,http://www.wikidata.org/entity/Q3603531,kleinkind
+27,http://www.wikidata.org/entity/Q3744857,petekind
+28,http://www.wikidata.org/entity/Q3752578,schoonzoon
+29,http://www.wikidata.org/entity/Q3813877,oudoom
+30,http://www.wikidata.org/entity/Q3972282,oudere broer
+31,http://www.wikidata.org/entity/Q4120409,oom / broer van moeder
+32,http://www.wikidata.org/entity/Q5992509,tante / zuster van vader
+33,http://www.wikidata.org/entity/Q9235758,grootmoeder
+34,http://www.wikidata.org/entity/Q9238344,grootvader
+35,http://www.wikidata.org/entity/Q10082670,oudere zus
+36,http://www.wikidata.org/entity/Q10291472,jongere broer
+37,http://www.wikidata.org/entity/Q10861465,broer
+38,http://www.wikidata.org/entity/Q10885666,oom / oudere broer van vader
+39,http://www.wikidata.org/entity/Q10912818,oom / jongere broer van vader
+40,http://www.wikidata.org/entity/Q10943095,jongere zus
+41,http://www.wikidata.org/entity/Q11921506,kleinzoon
+42,http://www.wikidata.org/entity/Q12051531,volle nicht
+43,http://www.wikidata.org/entity/Q12158205,oom / broer van vader
+44,http://www.wikidata.org/entity/Q15224724,neef
+45,http://www.wikidata.org/entity/Q15312935,halfbroer
+46,http://www.wikidata.org/entity/Q18489480,schoondochter
+47,http://www.wikidata.org/entity/Q19595226,halfbroer van vaderskant
+48,http://www.wikidata.org/entity/Q19595227,halfbroer van moederszijde
+49,http://www.wikidata.org/entity/Q19595228,halfzus van vaders kant
+50,http://www.wikidata.org/entity/Q19595229,halfzus van moederszijde
+51,http://www.wikidata.org/entity/Q19682162,vaders vader
+52,http://www.wikidata.org/entity/Q19682170,achterkleinzoon
+53,http://www.wikidata.org/entity/Q19682171,vaderlijke overgrootouder
+54,http://www.wikidata.org/entity/Q19682183,achterachterkleinzoon
+55,http://www.wikidata.org/entity/Q19682184,vaderlijke betovergrootouder
+56,http://www.wikidata.org/entity/Q19756330,kleindochter
+57,http://www.wikidata.org/entity/Q20746725,geadopteerde zoon
+58,http://www.wikidata.org/entity/Q20746742,adoptieouder
+59,http://www.wikidata.org/entity/Q20747487,achterkleindochter
+60,http://www.wikidata.org/entity/Q20776692,moeders vader
+61,http://www.wikidata.org/entity/Q20776714,vaders moeder
+62,http://www.wikidata.org/entity/Q20776741,moeders moeder
+63,http://www.wikidata.org/entity/Q20827872,achterachterkleinkind
+64,http://www.wikidata.org/entity/Q20827882,oudouder
+65,http://www.wikidata.org/entity/Q21073936,oom of tante
+66,http://www.wikidata.org/entity/Q21152551,mogelijke vader
+67,http://www.wikidata.org/entity/Q21152552,mogelijke dochter
+68,http://www.wikidata.org/entity/Q21173186,mogelijke zoon
+69,http://www.wikidata.org/entity/Q22970285,mogelijke moeder
+70,http://www.wikidata.org/entity/Q23009870,neef of nicht
+71,http://www.wikidata.org/entity/Q24027915,mogelijke huwelijkspartner
+72,http://www.wikidata.org/entity/Q25858158,geadopteerd kind
+73,http://www.wikidata.org/entity/Q26004701,moederlijke overgrootouder
+74,http://www.wikidata.org/entity/Q26237579,achterkleinkind
+75,http://www.wikidata.org/entity/Q26262192,mogelijke broer of zus
+76,http://www.wikidata.org/entity/Q26262236,mogelijke zoon of dochter
+77,http://www.wikidata.org/entity/Q26262238,mogelijke ouder
+78,http://www.wikidata.org/entity/Q27164472,moederlijke betovergrootouder
+79,http://www.wikidata.org/entity/Q27164515,betovergrootouder
+80,http://www.wikidata.org/entity/Q27965041,halfbroer of halfzus
+81,http://www.wikidata.org/entity/Q27965080,halfbroer of zus langs vaderskant
+82,http://www.wikidata.org/entity/Q27965083,halfbroer of halfzus van moederszijde
+83,http://www.wikidata.org/entity/Q28017737,peter
+84,http://www.wikidata.org/entity/Q28017739,peetmoeder
+85,http://www.wikidata.org/entity/Q28466210,jongere broer of zus
+86,http://www.wikidata.org/entity/Q28466211,oudere broer of zus
+87,http://www.wikidata.org/entity/Q38693655,kind
+88,http://www.wikidata.org/entity/Q41805469,oom
+89,http://www.wikidata.org/entity/Q41805519,volle neef
+90,http://www.wikidata.org/entity/Q42297295,achterachterkleindochter
+91,http://www.wikidata.org/entity/Q53277248,achterachterachterkleinkind
+92,http://www.wikidata.org/entity/Q57832810,neef
+93,http://www.wikidata.org/entity/Q57832811,nicht
+94,http://www.wikidata.org/entity/Q61740757,adoptievader
+95,http://www.wikidata.org/entity/Q61740758,adoptiemoeder

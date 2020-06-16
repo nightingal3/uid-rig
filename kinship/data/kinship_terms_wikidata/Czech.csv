@@ -1,0 +1,73 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,matka
+1,http://www.wikidata.org/entity/Q7565,otec
+2,http://www.wikidata.org/entity/Q7566,rodič
+3,http://www.wikidata.org/entity/Q31184,sourozenec
+4,http://www.wikidata.org/entity/Q76477,synovec nebo neteř
+5,http://www.wikidata.org/entity/Q76507,teta
+6,http://www.wikidata.org/entity/Q76557,strýc
+7,http://www.wikidata.org/entity/Q76666,bratranec nebo sestřenice
+8,http://www.wikidata.org/entity/Q159979,dvojče
+9,http://www.wikidata.org/entity/Q167918,prarodič
+10,http://www.wikidata.org/entity/Q177232,syn
+11,http://www.wikidata.org/entity/Q223973,kmotr
+12,http://www.wikidata.org/entity/Q239526,potomek
+13,http://www.wikidata.org/entity/Q308194,dcera
+14,http://www.wikidata.org/entity/Q402152,předek
+15,http://www.wikidata.org/entity/Q595094,sestra
+16,http://www.wikidata.org/entity/Q2500619,praprarodič
+17,http://www.wikidata.org/entity/Q2500620,prababička
+18,http://www.wikidata.org/entity/Q2500621,praděd
+19,http://www.wikidata.org/entity/Q2914212,švagr
+20,http://www.wikidata.org/entity/Q2920422,polorodá sestra
+21,http://www.wikidata.org/entity/Q3238556,švagrová
+22,http://www.wikidata.org/entity/Q3403377,neteř
+23,http://www.wikidata.org/entity/Q3603531,vnuk nebo vnučka
+24,http://www.wikidata.org/entity/Q3752578,zeť
+25,http://www.wikidata.org/entity/Q3813877,prastrýc
+26,http://www.wikidata.org/entity/Q3972282,starší bratr
+27,http://www.wikidata.org/entity/Q4120409,strýc
+28,http://www.wikidata.org/entity/Q9235758,babička
+29,http://www.wikidata.org/entity/Q9238344,dědeček
+30,http://www.wikidata.org/entity/Q10082670,starší sestra
+31,http://www.wikidata.org/entity/Q10291472,mladší bratr
+32,http://www.wikidata.org/entity/Q10861465,bratr
+33,http://www.wikidata.org/entity/Q10943095,mladší sestra
+34,http://www.wikidata.org/entity/Q11666901,formální příbuzenství
+35,http://www.wikidata.org/entity/Q11921506,vnuk
+36,http://www.wikidata.org/entity/Q11972456,prateta
+37,http://www.wikidata.org/entity/Q12051531,sestřenice
+38,http://www.wikidata.org/entity/Q12158205,strýc po otci
+39,http://www.wikidata.org/entity/Q12160962,tchán
+40,http://www.wikidata.org/entity/Q15224724,synovec
+41,http://www.wikidata.org/entity/Q15312935,polorodý bratr
+42,http://www.wikidata.org/entity/Q18489480,snacha
+43,http://www.wikidata.org/entity/Q19595226,polorodý bratr z otcovy strany
+44,http://www.wikidata.org/entity/Q19595227,polorodý bratr z matčiny strany
+45,http://www.wikidata.org/entity/Q19595228,polorodá sestra z otcovy strany
+46,http://www.wikidata.org/entity/Q19595229,polorodá sestra z matčiny strany
+47,http://www.wikidata.org/entity/Q19682162,děd z otcovy strany
+48,http://www.wikidata.org/entity/Q19756330,vnučka
+49,http://www.wikidata.org/entity/Q19901267,prasynovec nebo praneteř
+50,http://www.wikidata.org/entity/Q19901270,prastrýc nebo prateta
+51,http://www.wikidata.org/entity/Q20746725,adoptovaný syn
+52,http://www.wikidata.org/entity/Q20746742,adoptivní rodič
+53,http://www.wikidata.org/entity/Q21073936,strýc nebo teta
+54,http://www.wikidata.org/entity/Q23045211,bratrův syn
+55,http://www.wikidata.org/entity/Q23045234,sestřin syn
+56,http://www.wikidata.org/entity/Q23045278,bratrova dcera
+57,http://www.wikidata.org/entity/Q23045293,sestřina dcera
+58,http://www.wikidata.org/entity/Q25858158,adoptované dítě
+59,http://www.wikidata.org/entity/Q26237579,pravnouče
+60,http://www.wikidata.org/entity/Q27965041,polorodý sourozenec
+61,http://www.wikidata.org/entity/Q27965080,polorodý sourozenec z otcovy strany
+62,http://www.wikidata.org/entity/Q27965083,polorodý sourozenec z matčiny strany
+63,http://www.wikidata.org/entity/Q28017613,prarodič z otcovy strany
+64,http://www.wikidata.org/entity/Q28017614,prarodič z matčiny strany
+65,http://www.wikidata.org/entity/Q28466210,mladší sourozenec
+66,http://www.wikidata.org/entity/Q28466211,starší sourozenec
+67,http://www.wikidata.org/entity/Q38693655,dítě
+68,http://www.wikidata.org/entity/Q41798832,kmotřenka
+69,http://www.wikidata.org/entity/Q41805469,strýc
+70,http://www.wikidata.org/entity/Q41805519,bratranec
+71,http://www.wikidata.org/entity/Q41810352,syn otcova bratra

@@ -1,0 +1,102 @@
+﻿Number,Reading,Meaning
+0,zero,0
+1,uno,1
+2,due,2
+3,tre,3
+4,quattro,4
+5,cinque,5
+6,sei,6
+7,sette,7
+8,otto,8
+9,nove,9
+10,dieci,10
+11,undici,1* + 10*
+12,dodici,2* + 10*
+13,tredici,3 + 10*
+14,quattordici,4* + 10*
+15,quindici,5?€? + 10*
+16,sedici,6* + 10*
+17,diciassette,10* + 7
+18,diciotto,10* + 8
+19,diciannove,10* + 9
+20,venti,20
+21,ventuno,20# + 1
+22,ventidue,20 + 2
+23,ventitré,20 + 3*
+24,ventiquattro,20 + 4
+25,venticinque,20 + 5
+26,ventisei,20 + 6
+27,ventisette,20 + 7
+28,ventotto,20# + 8
+29,ventinove,20 + 9
+30,trenta,30
+31,trentuno,30# + 1
+32,trentadue,30 + 2
+33,trentatré,30 + 3*
+34,trentaquattro,30 + 4
+35,trentacinque,30 + 5
+36,trentasei,30 + 6
+37,trentasette,30 + 7
+38,trentotto,30# + 8
+39,trentanove,30 + 9
+40,quaranta,40
+41,quarantuno,40# + 1
+42,quarantadue,40 + 2
+43,quarantatré,40 + 3*
+44,quarantaquattro,40 + 4
+45,quarantacinque,40 + 5
+46,quarantasei,40 + 6
+47,quarantasette,40 + 7
+48,quarantotto,40# + 8
+49,quarantanove,40 + 9
+50,cinquanta,50
+51,cinquantuno,50# + 1
+52,cinquantadue,50 + 2
+53,cinquantatré,50 + 3*
+54,cinquantaquattro,50 + 4
+55,cinquantacinque,50 + 5
+56,cinquantasei,50 + 6
+57,cinquantasette,50 + 7
+58,cinquantotto,50# + 8
+59,cinquantanove,50 + 9
+60,sessanta,60
+61,sessantuno,60# + 1
+62,sessantadue,60 + 2
+63,sessantatré,60 + 3*
+64,sessantaquattro,60 + 4
+65,sessantacinque,60 + 5
+66,sessantasei,60 + 6
+67,sessantasette,60 + 7
+68,sessantotto,60# + 8
+69,sessantanove,60 + 9
+70,settanta,70
+71,settantuno,70# + 1
+72,settantadue,70 + 2
+73,settantatré,70 + 3*
+74,settantaquattro,70 + 4
+75,settantacinque,70 + 5
+76,settantasei,70 + 6
+77,settantasette,70 + 7
+78,settantotto,70# + 8
+79,settantanove,70 + 9
+80,ottanta,80
+81,ottantuno,80# + 1
+82,ottantadue,80 + 2
+83,ottantatré,80 + 3*
+84,ottantaquattro,80 + 4
+85,ottantacinque,80 + 5
+86,ottantasei,80 + 6
+87,ottantasette,80 + 7
+88,ottantotto,80# + 8
+89,ottantanove,80 + 9
+90,novanta,90
+91,novantuno,90# + 1
+92,novantadue,90 + 2
+93,novantatré,90 + 3*
+94,novantaquattro,90 + 4
+95,novantacinque,90 + 5
+96,novantasei,90 + 6
+97,novantasette,90 + 7
+98,novantotto,90# + 8
+99,novantanove,90 + 9
+100,cento,100

@@ -1,0 +1,99 @@
+,id,name
+0,http://www.wikidata.org/entity/Q23045234,siostrzeniec
+1,http://www.wikidata.org/entity/Q23045278,bratanica
+2,http://www.wikidata.org/entity/Q23045293,siostrzenica
+3,http://www.wikidata.org/entity/Q23684609,syn syna
+4,http://www.wikidata.org/entity/Q24027915,przypuszczalny mąż
+5,http://www.wikidata.org/entity/Q25858158,dziecko adoptowane
+6,http://www.wikidata.org/entity/Q27164515,prapradziadek
+7,http://www.wikidata.org/entity/Q27965041,rodzeństwo przyrodnie
+8,http://www.wikidata.org/entity/Q27965080,rodzeństwo przyrodnie ze strony ojca
+9,http://www.wikidata.org/entity/Q27965083,rodzeństwo przyrodnie ze strony matki
+10,http://www.wikidata.org/entity/Q28017566,stryj lub ciotka ojczysta
+11,http://www.wikidata.org/entity/Q28017613,dziadek lub babcia po mieczu
+12,http://www.wikidata.org/entity/Q28017614,dziadek lub babcia po kądzieli
+13,http://www.wikidata.org/entity/Q28466210,młodsze z rodzeństwa
+14,http://www.wikidata.org/entity/Q28466211,starsze z rodzeństwa
+15,http://www.wikidata.org/entity/Q41798817,chrześniak
+16,http://www.wikidata.org/entity/Q41798832,chrześniaczka
+17,http://www.wikidata.org/entity/Q61740757,ojciec adopcyjny
+18,http://www.wikidata.org/entity/Q61740758,matka adopcyjna
+19,http://www.wikidata.org/entity/Q7560,matka
+20,http://www.wikidata.org/entity/Q7565,ojciec
+21,http://www.wikidata.org/entity/Q7566,rodzice
+22,http://www.wikidata.org/entity/Q31184,rodzeństwo
+23,http://www.wikidata.org/entity/Q76477,dziecko brata lub siostry
+24,http://www.wikidata.org/entity/Q76507,ciocia
+25,http://www.wikidata.org/entity/Q76557,wujek
+26,http://www.wikidata.org/entity/Q76666,kuzyn
+27,http://www.wikidata.org/entity/Q159979,bliźniak
+28,http://www.wikidata.org/entity/Q167918,dziadek lub babcia
+29,http://www.wikidata.org/entity/Q170393,nieślubne dziecko
+30,http://www.wikidata.org/entity/Q177232,syn
+31,http://www.wikidata.org/entity/Q183905,zstępny
+32,http://www.wikidata.org/entity/Q223973,rodzice chrzestni
+33,http://www.wikidata.org/entity/Q239526,potomstwo
+34,http://www.wikidata.org/entity/Q308194,córka
+35,http://www.wikidata.org/entity/Q402152,wstępny
+36,http://www.wikidata.org/entity/Q595094,siostra
+37,http://www.wikidata.org/entity/Q1642895,Ród
+38,http://www.wikidata.org/entity/Q2500619,pradziadek lub prababcia
+39,http://www.wikidata.org/entity/Q2500620,prababcia
+40,http://www.wikidata.org/entity/Q2500621,pradziadek
+41,http://www.wikidata.org/entity/Q2914212,szwagier
+42,http://www.wikidata.org/entity/Q2920422,siostra przyrodnia
+43,http://www.wikidata.org/entity/Q3238556,szwagierka
+44,http://www.wikidata.org/entity/Q3403377,bratanica lub siostrzenica
+45,http://www.wikidata.org/entity/Q3603531,wnuk/wnuczka
+46,http://www.wikidata.org/entity/Q3752578,zięć
+47,http://www.wikidata.org/entity/Q3813877,brat dziadka lub babci
+48,http://www.wikidata.org/entity/Q3972282,starszy brat
+49,http://www.wikidata.org/entity/Q4113830,wnuczka brata lub siostry
+50,http://www.wikidata.org/entity/Q4113832,wnuk brata lub siostry
+51,http://www.wikidata.org/entity/Q4120409,wuj
+52,http://www.wikidata.org/entity/Q5992509,ciotka ojczysta
+53,http://www.wikidata.org/entity/Q6035384,ciotka macierzysta
+54,http://www.wikidata.org/entity/Q9235758,babcia
+55,http://www.wikidata.org/entity/Q9238344,dziadek
+56,http://www.wikidata.org/entity/Q10082670,starsza siostra
+57,http://www.wikidata.org/entity/Q10291472,młodszy brat
+58,http://www.wikidata.org/entity/Q10861465,brat
+59,http://www.wikidata.org/entity/Q10885666,starszy brat ojca
+60,http://www.wikidata.org/entity/Q10912818,młodszy brat ojca
+61,http://www.wikidata.org/entity/Q10943095,młodsza siostra
+62,http://www.wikidata.org/entity/Q11275656,prawnuczę pradziadków
+63,http://www.wikidata.org/entity/Q11921506,wnuk
+64,http://www.wikidata.org/entity/Q11972456,praciota
+65,http://www.wikidata.org/entity/Q12158205,stryj
+66,http://www.wikidata.org/entity/Q12160962,teść
+67,http://www.wikidata.org/entity/Q15224724,bratanek lub siostrzeniec
+68,http://www.wikidata.org/entity/Q15312935,brat przyrodni
+69,http://www.wikidata.org/entity/Q18489480,synowa
+70,http://www.wikidata.org/entity/Q19595226,brat przyrodni ze strony ojca
+71,http://www.wikidata.org/entity/Q19595227,brat przyrodni ze strony matki
+72,http://www.wikidata.org/entity/Q19595228,siostra przyrodnia ze strony ojca
+73,http://www.wikidata.org/entity/Q19595229,siostra przyrodnia ze strony matki
+74,http://www.wikidata.org/entity/Q19682162,dziadek po mieczu
+75,http://www.wikidata.org/entity/Q19682170,prawnuk
+76,http://www.wikidata.org/entity/Q19682171,pradziadek w linii męskiej
+77,http://www.wikidata.org/entity/Q19682183,syn prawnuka
+78,http://www.wikidata.org/entity/Q19682184,prapradziadek w linii męskiej
+79,http://www.wikidata.org/entity/Q19756330,wnuczka
+80,http://www.wikidata.org/entity/Q19901267,wnuczę brata lub siostry
+81,http://www.wikidata.org/entity/Q19901270,siostra lub brat dziadka lub babci
+82,http://www.wikidata.org/entity/Q19901274,kuzyn lub kuzynka rodzica
+83,http://www.wikidata.org/entity/Q19901611,dziecko kuzyna lub kuzynki
+84,http://www.wikidata.org/entity/Q20746725,syn adoptowany
+85,http://www.wikidata.org/entity/Q20746742,rodzic adopcyjny
+86,http://www.wikidata.org/entity/Q20747487,prawnuczka
+87,http://www.wikidata.org/entity/Q20776692,dziadek po kądzieli
+88,http://www.wikidata.org/entity/Q20776714,babcia po mieczu
+89,http://www.wikidata.org/entity/Q20776741,babcia po kądzieli
+90,http://www.wikidata.org/entity/Q20827882,pradziadek lub prababcia dziadka lub babci
+91,http://www.wikidata.org/entity/Q21073936,wujek/ciocia
+92,http://www.wikidata.org/entity/Q21152551,przypuszczalny ojciec
+93,http://www.wikidata.org/entity/Q21152552,przypuszczalna córka
+94,http://www.wikidata.org/entity/Q21173186,przypuszczalny syn
+95,http://www.wikidata.org/entity/Q22970285,przypuszczalna matka
+96,http://www.wikidata.org/entity/Q23009870,kuzyn
+97,http://www.wikidata.org/entity/Q23045211,bratanek

@@ -1,0 +1,92 @@
+,id,name
+0,http://www.wikidata.org/entity/Q7560,madre
+1,http://www.wikidata.org/entity/Q7565,padre
+2,http://www.wikidata.org/entity/Q7566,genitore
+3,http://www.wikidata.org/entity/Q31184,fratello o sorella
+4,http://www.wikidata.org/entity/Q76477,nipoti
+5,http://www.wikidata.org/entity/Q76507,zia
+6,http://www.wikidata.org/entity/Q76557,zio
+7,http://www.wikidata.org/entity/Q76666,cugino di primo grado
+8,http://www.wikidata.org/entity/Q159979,gemelli
+9,http://www.wikidata.org/entity/Q167918,nonno
+10,http://www.wikidata.org/entity/Q170393,figlio naturale
+11,http://www.wikidata.org/entity/Q177232,figlio
+12,http://www.wikidata.org/entity/Q183905,discendente
+13,http://www.wikidata.org/entity/Q223973,padrino e madrina
+14,http://www.wikidata.org/entity/Q239526,discendenza
+15,http://www.wikidata.org/entity/Q308194,figlia
+16,http://www.wikidata.org/entity/Q402152,avo
+17,http://www.wikidata.org/entity/Q595094,sorella
+18,http://www.wikidata.org/entity/Q1502246,genitore biologico
+19,http://www.wikidata.org/entity/Q2500619,bisavoli
+20,http://www.wikidata.org/entity/Q2500620,bisavola
+21,http://www.wikidata.org/entity/Q2500621,bisavolo
+22,http://www.wikidata.org/entity/Q2914212,cognato
+23,http://www.wikidata.org/entity/Q2920422,sorellastra
+24,http://www.wikidata.org/entity/Q3238556,cognata
+25,http://www.wikidata.org/entity/Q3403377,nipote
+26,http://www.wikidata.org/entity/Q3603531,nipote
+27,http://www.wikidata.org/entity/Q3744857,figlioccio e figlioccia
+28,http://www.wikidata.org/entity/Q3752578,genero
+29,http://www.wikidata.org/entity/Q3813877,prozio
+30,http://www.wikidata.org/entity/Q3972282,fratello maggiore
+31,http://www.wikidata.org/entity/Q4113830,pronipota
+32,http://www.wikidata.org/entity/Q4113832,pronipote
+33,http://www.wikidata.org/entity/Q4120409,zio materno
+34,http://www.wikidata.org/entity/Q5992509,zia paterna
+35,http://www.wikidata.org/entity/Q6035384,zia materna
+36,http://www.wikidata.org/entity/Q7375049,bastardo reale
+37,http://www.wikidata.org/entity/Q9235758,nonna
+38,http://www.wikidata.org/entity/Q9238344,nonno
+39,http://www.wikidata.org/entity/Q10082670,sorella maggiore
+40,http://www.wikidata.org/entity/Q10291472,fratello minore
+41,http://www.wikidata.org/entity/Q10499185,figlio illegittimo di un nobile
+42,http://www.wikidata.org/entity/Q10861465,fratello
+43,http://www.wikidata.org/entity/Q10885666,zio paterno maggiore
+44,http://www.wikidata.org/entity/Q10912818,zio paterno minore
+45,http://www.wikidata.org/entity/Q10943095,sorella minore
+46,http://www.wikidata.org/entity/Q11275656,cugino di terzo grado
+47,http://www.wikidata.org/entity/Q11666901,parente acquisito
+48,http://www.wikidata.org/entity/Q11921506,nipote di nonno
+49,http://www.wikidata.org/entity/Q11972456,prozia
+50,http://www.wikidata.org/entity/Q12051531,cugina di primo grado
+51,http://www.wikidata.org/entity/Q12158205,zio paterno
+52,http://www.wikidata.org/entity/Q12160962,padre della moglie
+53,http://www.wikidata.org/entity/Q15224724,nipote
+54,http://www.wikidata.org/entity/Q15312935,fratellastro
+55,http://www.wikidata.org/entity/Q18489480,nuora
+56,http://www.wikidata.org/entity/Q19595226,fratellastro paterno
+57,http://www.wikidata.org/entity/Q19595227,fratello uterino
+58,http://www.wikidata.org/entity/Q19595228,sorellastra paterna
+59,http://www.wikidata.org/entity/Q19595229,sorella uterina
+60,http://www.wikidata.org/entity/Q19682162,nonno paterno
+61,http://www.wikidata.org/entity/Q19682170,pronipote
+62,http://www.wikidata.org/entity/Q19682183,trisnipote
+63,http://www.wikidata.org/entity/Q19756330,abiatica
+64,http://www.wikidata.org/entity/Q19901267,pronipote
+65,http://www.wikidata.org/entity/Q19901270,prozio o prozia
+66,http://www.wikidata.org/entity/Q19901274,cugino di secondo grado
+67,http://www.wikidata.org/entity/Q20746725,figlio adottivo
+68,http://www.wikidata.org/entity/Q20746742,genitore adottivo
+69,http://www.wikidata.org/entity/Q20747487,pronipote
+70,http://www.wikidata.org/entity/Q20776692,nonno materno
+71,http://www.wikidata.org/entity/Q20776714,nonna paterna
+72,http://www.wikidata.org/entity/Q20776741,nonna materna
+73,http://www.wikidata.org/entity/Q20827882,bisarcavolo/bisarcavola
+74,http://www.wikidata.org/entity/Q21073936,zio e zia
+75,http://www.wikidata.org/entity/Q21173186,figlio putativo
+76,http://www.wikidata.org/entity/Q23009870,cugino/cugina
+77,http://www.wikidata.org/entity/Q25858158,figlio adottivo
+78,http://www.wikidata.org/entity/Q26237579,pronipote
+79,http://www.wikidata.org/entity/Q28017613,nonni paterni
+80,http://www.wikidata.org/entity/Q28017614,nonni materni
+81,http://www.wikidata.org/entity/Q28017737,padrino
+82,http://www.wikidata.org/entity/Q28017739,madrina
+83,http://www.wikidata.org/entity/Q28466210,fratello o sorella minore
+84,http://www.wikidata.org/entity/Q28466211,fratello o sorella maggiore
+85,http://www.wikidata.org/entity/Q38693655,figlio o figlia
+86,http://www.wikidata.org/entity/Q41798817,figlioccio
+87,http://www.wikidata.org/entity/Q41798832,figlioccia
+88,http://www.wikidata.org/entity/Q41805519,cugino di primo grado
+89,http://www.wikidata.org/entity/Q61740757,padre adottivo
+90,http://www.wikidata.org/entity/Q61740758,madre adottiva
