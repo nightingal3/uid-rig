@@ -4,4 +4,4 @@ This repository contains data and code necessary to replicate the analyses in *R
 
 * numeral_systems: contains data/code for numeral system analyses
 * kinship: contains data/code for kinship analyses
-
+* word-order: contains data/code for word order analyses
