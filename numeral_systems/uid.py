@@ -511,6 +511,42 @@ def print_accuracy_in_range(correct_dict, total_dict):
     table.add_row(["Number correct"] + accuracies)
 
 
+def get_base_atom_prob(info_trajs):
+    probs = []
+    for i in range(11, 41):
+        if i % 10 == 0:
+            continue
+        p_base_atom = 1 - info_trajs["uni"][i][1]/(info_trajs["uni"][i][1] + info_trajs["uni_alt"][i][1])
+        probs.append((i, p_base_atom))
+    return probs
+
+def get_base_atom_preference(info_trajs):
+    preferences = []
+    for i in range(11, 41):
+        if i % 10 == 0:
+            continue
+        preference = 0 if sum(info_trajs["uni"][i]) > sum(info_trajs["uni_alt"][i]) else 1
+        preferences.append((i, preference))
+    return preferences
+
+def get_base_atom_preference_uid(info_trajs):
+    preferences = []
+    for i in range(11, 41):
+        if i % 10 == 0:
+            continue
+        preference = 0 if info_trajs["uni"][i] > info_trajs["uni_alt"][i] else 1
+        preferences.append((i, preference))
+    return preferences
+
+def get_base_atom_prob_uid(info_trajs):
+    probs = []
+    for i in range(11, 41):
+        if i % 10 == 0:
+            continue
+        p_base_atom = 1 - info_trajs["uni"][i]/(info_trajs["uni"][i] + info_trajs["uni_alt"][i])
+        probs.append((i, p_base_atom))
+    return probs
+
 if __name__ == "__main__":
     langnames = dict(
         English="eng",
@@ -547,6 +583,14 @@ if __name__ == "__main__":
 
     info_trajs, UID_dev = calc_info_trajectory(selected_terms, selected_need_probs, selected_langname,
                                                100, False, 2, uni_alt=selected_alternate_order, uni=selected_attested_order)
+
+    base_atom_prob = get_base_atom_preference_uid(UID_dev)
+    with open("./data/base-atom-preference-uid.csv", "w") as out_f:
+        writer = csv.writer(out_f)
+        for row in base_atom_prob:
+            writer.writerow(row)
+    print(base_atom_prob)
+    assert False
 
     area = calc_cumulative_surprisal(
         uni_alt=info_trajs[selected_langname_alt], uni=info_trajs[selected_langname])

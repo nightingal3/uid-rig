@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import csv
 
 import pandas as pd
@@ -38,14 +40,14 @@ font_sizes = dict(
 
 # Terminology
 terms = dict(
-    eng=pd.read_csv("data/terms_1_to_100/english.csv"),
-    eng_1000=pd.read_csv("data/terms_1_to_100/english_1000.csv"),
-    fre=pd.read_csv("data/terms_1_to_100/french.csv"),
-    ger=pd.read_csv("data/terms_1_to_100/german_segmented.csv"),
-    ita=pd.read_csv("data/terms_1_to_100/italian_romanized.csv"),
-    mand=pd.read_csv("data/terms_1_to_100/chinese_romanized.csv"),
-    spa=pd.read_csv("data/terms_1_to_100/spanish_romanized.csv"),
-    uni=pd.read_csv("data/terms_1_to_100/chinese_romanized.csv")
+    eng=pd.read_csv("data/terms_1_to_100/english.csv", encoding="unicode_escape"),
+    eng_1000=pd.read_csv("data/terms_1_to_100/english_1000.csv",encoding="unicode_escape"),
+    fre=pd.read_csv("data/terms_1_to_100/french.csv", encoding="unicode_escape"),
+    ger=pd.read_csv("data/terms_1_to_100/german_segmented.csv", encoding="unicode_escape"),
+    ita=pd.read_csv("data/terms_1_to_100/italian_romanized.csv", encoding="unicode_escape"),
+    mand=pd.read_csv("data/terms_1_to_100/chinese_romanized.csv", encoding="unicode_escape"),
+    spa=pd.read_csv("data/terms_1_to_100/spanish_romanized.csv", encoding="unicode_escape"),
+    uni=pd.read_csv("data/terms_1_to_100/chinese_romanized.csv", encoding="unicode_escape")
 )
 
 # Attested/alternate term orderings
