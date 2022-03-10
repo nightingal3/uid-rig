@@ -1,0 +1,102 @@
+Number,Reading,Meaning,phonetic
+0,z¨¦ro,0,Z ¨¦ZH OW 
+1,un,1,AO N 
+2,deux,2,D OW 
+3,trois,3,T ZH W AA 
+4,quatre,4,K AA T ZH 
+5,cinq,5,S EH N K 
+6,six,6,S IY 
+7,sept,7,S AH P T 
+8,huit,8,HH UW IY T 
+9,neuf,9,N OW F 
+10,dix,10,D IY 
+11,onze,11,AO N Z 
+12,douze,12,D UW Z 
+13,treize,13,T ZH AH IY Z 
+14,quatorze,14,K AA T OW ZH Z 
+15,quinze,15,K EH N Z 
+16,seize,16,S AH IY Z 
+17,dix-sept,10 + 7,D IY  S AH P T 
+18,dix-huit,10 + 8,D IY  HH UW IY T 
+19,dix-neuf,10 + 9,D IY  N OW F 
+20,vingt,20,V EH N G T 
+21,vingt-et-un,20 and 1,V EH N G T  AH T  AO N 
+22,vingt-deux,20 + 2,V EH N G T  D OW 
+23,vingt-trois,20 + 3,V EH N G T  T ZH W AA 
+24,vingt-quatre,20 + 4,V EH N G T  K AA T ZH 
+25,vingt-cinq,20 + 5,V EH N G T  S EH N K 
+26,vingt-six,20 + 6,V EH N G T  S IY 
+27,vingt-sept,20 + 7,V EH N G T  S AH P T 
+28,vingt-huit,20 + 8,V EH N G T  HH UW IY T 
+29,vingt-neuf,20 + 9,V EH N G T  N OW F 
+30,trente,30,T ZH AA N T 
+31,trente-et-un,30 and 1,T ZH AA N T  AH T  AO N 
+32,trente-deux,30 + 2,T ZH AA N T  D OW 
+33,trente-trois,30 + 3,T ZH AA N T  T ZH W AA 
+34,trente-quatre,30 + 4,T ZH AA N T  K AA T ZH 
+35,trente-cinq,30 + 5,T ZH AA N T  S EH N K 
+36,trente-six,30 + 6,T ZH AA N T  S IY 
+37,trente-sept,30 + 7,T ZH AA N T  S AH P T 
+38,trente-huit,30 + 8,T ZH AA N T  HH UW IY T 
+39,trente-neuf,30 + 9,T ZH AA N T  N OW F 
+40,quarante,40,K AA ZH AA N T 
+41,quarante-et-un,40 and 1,K AA ZH AA N T  AH T  AO N 
+42,quarante-deux,40 + 2,K AA ZH AA N T  D OW 
+43,quarante-trois,40 + 3,K AA ZH AA N T  T ZH W AA 
+44,quarante-quatre,40 + 4,K AA ZH AA N T  K AA T ZH 
+45,quarante-cinq,40 + 5,K AA ZH AA N T  S EH N K 
+46,quarante-six,40 + 6,K AA ZH AA N T  S IY 
+47,quarante-sept,40 + 7,K AA ZH AA N T  S AH P T 
+48,quarante-huit,40 + 8,K AA ZH AA N T  HH UW IY T 
+49,quarante-neuf,40 + 9,K AA ZH AA N T  N OW F 
+50,cinquante,50,S EH N K AA N T 
+51,cinquante-et-un,50 and 1,S EH N K AA N T  AH T  AO N 
+52,cinquante-deux,50 + 2,S EH N K AA N T  D OW 
+53,cinquante-trois,50 + 3,S EH N K AA N T  T ZH W AA 
+54,cinquante-quatre,50 + 4,S EH N K AA N T  K AA T ZH 
+55,cinquante-cinq,50 + 5,S EH N K AA N T  S EH N K 
+56,cinquante-six,50 + 6,S EH N K AA N T  S IY 
+57,cinquante-sept,50 + 7,S EH N K AA N T  S AH P T 
+58,cinquante-huit,50 + 8,S EH N K AA N T  HH UW IY T 
+59,cinquante-neuf,50 + 9,S EH N K AA N T  N OW F 
+60,soixante,60,S W AA K S AA N T 
+61,soixante-et-un,60 and 1,S W AA K S AA N T  AH T  AO N 
+62,soixante-deux,60 + 2,S W AA K S AA N T  D OW 
+63,soixante-trois,60 + 3,S W AA K S AA N T  T ZH W AA 
+64,soixante-quatre,60 + 4,S W AA K S AA N T  K AA T ZH 
+65,soixante-cinq,60 + 5,S W AA K S AA N T  S EH N K 
+66,soixante-six,60 + 6,S W AA K S AA N T  S IY 
+67,soixante-sept,60 + 7,S W AA K S AA N T  S AH P T 
+68,soixante-huit,60 + 8,S W AA K S AA N T  HH UW IY T 
+69,soixante-neuf,60 + 9,S W AA K S AA N T  N OW F 
+70,soixante-dix,60 + 10,S W AA K S AA N T  D IY 
+71,soixante-et-onze,60 and 11,S W AA K S AA N T  AH T  AO N Z 
+72,soixante-douze,60 + 12,S W AA K S AA N T  D UW Z 
+73,soixante-treize,60 + 13,S W AA K S AA N T  T ZH AH IY Z 
+74,soixante-quatorze,60 + 14,S W AA K S AA N T  K AA T OW ZH Z 
+75,soixante-quinze,60 + 15,S W AA K S AA N T  K EH N Z 
+76,soixante-seize,60 + 16,S W AA K S AA N T  S AH IY Z 
+77,soixante-dix-sept,60 + 10 + 7,S W AA K S AA N T  D IY  S AH P T 
+78,soixante-dix-huit,60 + 10 + 8,S W AA K S AA N T  D IY  HH UW IY T 
+79,soixante-dix-neuf,60 + 10 + 9,S W AA K S AA N T  D IY  N OW F 
+80,quatrevingts,4 ?? 20s,K AA T ZH AH V EH N G T 
+81,quatrevingts-un,4 ?? 20 + 1,K AA T ZH AH V EH N G T  AO N 
+82,quatrevingts-deux,4 ?? 20 + 2,K AA T ZH AH V EH N G T  D OW 
+83,quatrevingts-trois,4 ?? 20 + 3,K AA T ZH AH V EH N G T  T ZH W AA 
+84,quatrevingts-quatre,4 ?? 20 + 4,K AA T ZH AH V EH N G T  K AA T ZH 
+85,quatrevingts-cinq,4 ?? 20 + 5,K AA T ZH AH V EH N G T  S EH N K 
+86,quatrevingts-six,4 ?? 20 + 6,K AA T ZH AH V EH N G T  S IY 
+87,quatrevingts-sept,4 ?? 20 + 7,K AA T ZH AH V EH N G T  S AH P T 
+88,quatrevingts-huit,4 ?? 20 + 8,K AA T ZH AH V EH N G T  HH UW IY T 
+89,quatrevingts-neuf,4 ?? 20 + 9,K AA T ZH AH V EH N G T  N OW F 
+90,quatrevingts-dix,4 ?? 20 + 10,K AA T ZH AH V EH N G T  D IY 
+91,quatrevingts-onze,4 ?? 20 + 11,K AA T ZH AH V EH N G T  AO N Z 
+92,quatrevingts-douze,4 ?? 20 + 12,K AA T ZH AH V EH N G T  D UW Z 
+93,quatrevingts-treize,4 ?? 20 + 13,K AA T ZH AH V EH N G T  T ZH AH IY Z 
+94,quatrevingts-quatorze,4 ?? 20 + 14,K AA T ZH AH V EH N G T  K AA T OW ZH Z 
+95,quatrevingts-quinze,4 ?? 20 + 15,K AA T ZH AH V EH N G T  K EH N Z 
+96,quatrevingts-seize,4 ?? 20 + 16,K AA T ZH AH V EH N G T  S AH IY Z 
+97,quatrevingts-dix-sept,4 ?? 20 + 10 + 7,K AA T ZH AH V EH N G T  D IY  S AH P T 
+98,quatrevingts-dix-huit,4 ?? 20 + 10 + 8,K AA T ZH AH V EH N G T  D IY  HH UW IY T 
+99,quatrevingts-dix-neuf,4 ?? 20 + 10 + 9,K AA T ZH AH V EH N G T  D IY  N OW F 
+100,cent,100,S 
